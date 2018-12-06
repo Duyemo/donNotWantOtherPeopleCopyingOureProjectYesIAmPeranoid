@@ -146,6 +146,7 @@ $(document).ready(registerClickOnShip);
 
 
  //function for determening on witch field in the table is clicked
+ // and placing the ships
  var placeShipInTable = function () {
 
     //variables for the table
@@ -203,7 +204,7 @@ $(document).ready(registerClickOnShip);
               if(moving){
                 
                 //add the parts of the ship to the table
-                generalAdder(rowNumber, cellNumber, "ship1.gif");
+                generalAdder(rowNumber, cellNumber, "images/ship1.gif");
               
                 //commands that delets the selected ship so you can't re-use it
                 (shipPlace).remove();
@@ -223,8 +224,8 @@ $(document).ready(registerClickOnShip);
                   //checks if you selected a ship
               if(moving){                                                                                      
                 //add the parts of the ship to the table
-                generalAdder(rowNumber, cellNumber, "doubleShipTop.gif");
-                generalAdder(rowNumber+1, cellNumber, "doubleShipBot.gif");
+                generalAdder(rowNumber, cellNumber, "images/doubleShipTop.gif");
+                generalAdder(rowNumber+1, cellNumber, "images/doubleShipBot.gif");
                 
                 //commands that delets the selected ship so you can't re-use it
                 (shipPlace).remove();
@@ -245,9 +246,9 @@ $(document).ready(registerClickOnShip);
               if(moving){                                                                                      
                 
                 //add the parts of the ship to the table
-                generalAdder(rowNumber, cellNumber, "ship1.gif");
-                generalAdder(rowNumber+1, cellNumber, "ship1.gif");
-                generalAdder(rowNumber+2, cellNumber,"ship1.gif");
+                generalAdder(rowNumber, cellNumber, "images/ship1.gif");
+                generalAdder(rowNumber+1, cellNumber, "images/ship1.gif");
+                generalAdder(rowNumber+2, cellNumber,"images/ship1.gif");
               
               //commands that delets the selected ship so you can't re-use it
               (shipPlace).remove();
@@ -270,10 +271,10 @@ $(document).ready(registerClickOnShip);
               if(moving){                                                                                      
                
                //add the parts of the ship to the table
-               generalAdder(rowNumber, cellNumber, "ship1.gif");
-               generalAdder(rowNumber+1, cellNumber, "ship1.gif");
-               generalAdder(rowNumber+2, cellNumber, "ship1.gif");
-               generalAdder(rowNumber+3, cellNumber, "ship1.gif");
+               generalAdder(rowNumber, cellNumber, "images/ship1.gif");
+               generalAdder(rowNumber+1, cellNumber, "images/ship1.gif");
+               generalAdder(rowNumber+2, cellNumber, "images/ship1.gif");
+               generalAdder(rowNumber+3, cellNumber, "images/ship1.gif");
             
              //commands that delets the selected ship so you can't re-use it
              (shipPlace).remove();
@@ -297,11 +298,11 @@ $(document).ready(registerClickOnShip);
               if(moving){                                                                                      
                
                //add the parts of the ship to the table
-               generalAdder(rowNumber, cellNumber, "ship1.gif");
-               generalAdder(rowNumber+1, cellNumber, "ship1.gif");
-               generalAdder(rowNumber+2, cellNumber, "ship1.gif");
-               generalAdder(rowNumber+3, cellNumber, "ship1.gif");
-               generalAdder(rowNumber+4, cellNumber, "ship1.gif");
+               generalAdder(rowNumber, cellNumber, "images/ship1.gif");
+               generalAdder(rowNumber+1, cellNumber, "images/ship1.gif");
+               generalAdder(rowNumber+2, cellNumber, "images/ship1.gif");
+               generalAdder(rowNumber+3, cellNumber, "images/ship1.gif");
+               generalAdder(rowNumber+4, cellNumber, "images/ship1.gif");
             
              //commands that delets the selected ship so you can't re-use it
              (shipPlace).remove();
@@ -322,8 +323,8 @@ $(document).ready(registerClickOnShip);
               if(moving){                                                                                      
                 
                //add the parts of the ship to the table
-               generalAdder(rowNumber, cellNumber, "ship1.gif");
-               generalAdder(rowNumber, cellNumber+1, "ship1.gif");
+               generalAdder(rowNumber, cellNumber, "images/ship1.gif");
+               generalAdder(rowNumber, cellNumber+1, "images/ship1.gif");
               
               //commands that delets the selected ship so you can't re-use it
               (shipPlace).remove();
@@ -343,9 +344,9 @@ $(document).ready(registerClickOnShip);
       if(moving){                                                                                      
         
        //add the parts of the ship to the table
-       generalAdder(rowNumber, cellNumber, "ship1.gif");
-       generalAdder(rowNumber, cellNumber+1, "ship1.gif");
-       generalAdder(rowNumber, cellNumber+2, "ship1.gif");
+       generalAdder(rowNumber, cellNumber, "images/ship1.gif");
+       generalAdder(rowNumber, cellNumber+1, "images/ship1.gif");
+       generalAdder(rowNumber, cellNumber+2, "images/ship1.gif");
       
       //commands that delets the selected ship so you can't re-use it
       (shipPlace).remove();
@@ -366,10 +367,10 @@ $(document).ready(registerClickOnShip);
         if(moving){                                                                                      
           
          //add the parts of the ship to the table
-         generalAdder(rowNumber, cellNumber, "ship1.gif");
-         generalAdder(rowNumber, cellNumber+1, "ship1.gif");
-         generalAdder(rowNumber, cellNumber+2, "ship1.gif");
-         generalAdder(rowNumber, cellNumber+3, "ship1.gif");
+         generalAdder(rowNumber, cellNumber, "images/ship1.gif");
+         generalAdder(rowNumber, cellNumber+1, "images/ship1.gif");
+         generalAdder(rowNumber, cellNumber+2, "images/ship1.gif");
+         generalAdder(rowNumber, cellNumber+3, "images/ship1.gif");
         
         //commands that delets the selected ship so you can't re-use it
         (shipPlace).remove();
@@ -391,11 +392,11 @@ $(document).ready(registerClickOnShip);
         if(moving){                                                                                      
           
          //add the parts of the ship to the table
-         generalAdder(rowNumber, cellNumber, "ship1.gif");
-         generalAdder(rowNumber, cellNumber+1, "ship1.gif");
-         generalAdder(rowNumber, cellNumber+2, "ship1.gif");
-         generalAdder(rowNumber, cellNumber+3, "ship1.gif");
-         generalAdder(rowNumber, cellNumber+4, "ship1.gif");
+         generalAdder(rowNumber, cellNumber, "images/ship1.gif");
+         generalAdder(rowNumber, cellNumber+1, "images/ship1.gif");
+         generalAdder(rowNumber, cellNumber+2, "images/ship1.gif");
+         generalAdder(rowNumber, cellNumber+3, "images/ship1.gif");
+         generalAdder(rowNumber, cellNumber+4, "images/ship1.gif");
         
         //commands that delets the selected ship so you can't re-use it
         (shipPlace).remove();
