@@ -84,39 +84,39 @@ var registerClickOnShip = function () {
       
       if(heightOfShip == 70){
         shipTurned = new Image(70, 35);
-        shipTurned.src = "doubleShipTurned.gif";
+        shipTurned.src = "images/doubleShipTurned.gif";
       }
       if(heightOfShip == 105){
         shipTurned = new Image(105, 35);
-        shipTurned.src = "tripleShipTurned.gif";
+        shipTurned.src = "images/tripleShipTurned.gif";
       }
       if(heightOfShip == 140){
         shipTurned = new Image(140, 35);
-        shipTurned.src = "quadraShipTurned.gif";
+        shipTurned.src = "images/quadraShipTurned.gif";
       }
       if(heightOfShip == 175){
         shipTurned = new Image(105, 35);
-        shipTurned.src = "pentaShipTurned.gif";
+        shipTurned.src = "images/pentaShipTurned.gif";
       }
       if(widthOfShip == 70){
         shipTurned = new Image(35, 70);
-        shipTurned.src = "doubleShip.gif";
+        shipTurned.src = "images/doubleShip.gif";
       }
       if(widthOfShip == 105){
         shipTurned = new Image(35, 105);
-        shipTurned.src = "tripleShip.gif";
+        shipTurned.src = "images/tripleShip.gif";
       }
       if(widthOfShip == 140){
         shipTurned = new Image(35, 140);
-        shipTurned.src = "quadraShip.gif";
+        shipTurned.src = "images/quadraShip.gif";
       }
       if(widthOfShip == 175){
         shipTurned = new Image(35, 175);
-        shipTurned.src = "pentaShip.gif";
+        shipTurned.src = "images/pentaShip.gif";
       }
       if(heightOfShip == 35 && widthOfShip == 35){
         shipTurned = new Image(35, 35);
-        shipTurned.src = "ship1.gif";
+        shipTurned.src = "images/ship1.gif";
       } 
 
 
