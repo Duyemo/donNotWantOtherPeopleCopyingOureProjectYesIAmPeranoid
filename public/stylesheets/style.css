@@ -29,11 +29,21 @@ h1{
   border-color: tomato;
 }
 
+
+
 button{
   width: 30%;
   margin-top: 10%
- 
+ }
+ button:active{ 
+  background-color: gray;
 }
+button:hover{
+  border-color: #000000;
+  border-width: 1px;
+}
+
+
 
 #hit{
   position: absolute;
@@ -229,12 +239,4 @@ li a {
   top: -1000px;
  }
 
- button:active{ 
-   background-color: gray;
- }
- button:hover{
-   /*outline-color: black;
-   outline: 100px;*/
-   border-color: #000000;
-   border-width: 1px;
- }
+ 
