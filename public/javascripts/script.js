@@ -1,4 +1,4 @@
-var gameStatus = 0;
+
 
 colorChange();
 
@@ -6,18 +6,27 @@ colorChange();
 // 0 is before the game
 // 1 is when playing
 function gameState() {
-
-    if (gameStatus == 0) {
-        alert("was 0");
-        gameStatus = 1;
-        return;
-    }
-    if (gameStatus == 1) {
-        alert("was 1");
-        gameStatus = 0;
-        return;
-    }
+    
+    console.log("start the game");
+    
+    var name = "Test"
+    var table = document.getElementById("playerTable");
+    var field = [];
+ //iterate through rows
+for (var i = 0, row; row = table.rows[i]; i++) {
+    //iterate through columns
+   for (var j = 0, col; col = row.cells[j]; j++) {
+    //gets if it contains a ship, then pushes it to the array
+     field.push(col.id);
+   }  
 }
+
+var PlayerOne = new Players(name, field);
+alert(PlayerOne.getName());
+console.log(PlayerOne.getField());
+}
+
+
 
 function fire(elem) {
     var shipStat = 0;
