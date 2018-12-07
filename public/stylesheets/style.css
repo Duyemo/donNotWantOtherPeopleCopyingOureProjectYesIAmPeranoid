@@ -117,8 +117,8 @@ li a {
  /* the tables */
  table{
   table-layout: fixed;
-  width: 450px;
-  height: 450px;
+  width: 480px;
+  height: 480px;
  }
  tr{
      height: 40px;
