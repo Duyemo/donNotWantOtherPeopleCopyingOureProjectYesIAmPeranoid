@@ -414,8 +414,7 @@ $(document).ready(registerClickOnShip);
 $(document).ready(placeShipInTable);
 
 var hoi =function(){
-  var xxxx = localStorage.getItem('name');
-  window.alert(xxxx);
+  window.alert(localStorage.getItem('name'));
 }
 $(document).ready(hoi);
 
