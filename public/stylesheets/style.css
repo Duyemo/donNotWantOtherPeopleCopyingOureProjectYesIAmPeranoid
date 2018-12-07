@@ -227,5 +227,14 @@ li a {
   position: absolute;
   left: -1000px;
   top: -1000px;
-  
+ }
+
+ button:active{ /*hover*/
+   background-color: gray;
+ }
+ button:hover{
+   outline-color: black;
+   outline: 100px;
+   border-color: #000000;
+   border-width: 1px;
  }
