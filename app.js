@@ -16,10 +16,20 @@ var server = http.createServer(app);
 const wss = new websocket.Server({ server });
 
 wss.on("connection", function(ws) {
-    ws.send("connected to server");
+    var i = 0;
+    ws.send("connected to server " + i);
     ws.on("message", function incoming(message) {
         console.log(message);
+        i = i + 1;
     });
+});
+
+wss.on('connection', (ws) => {
+    ws.on('message', (m) => {
+        console.log('received: %s', m);
+    });
+
+    console.log(wss.clients.size);
 });
 
 server.listen(port);
