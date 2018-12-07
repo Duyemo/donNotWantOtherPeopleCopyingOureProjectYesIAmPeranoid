@@ -413,10 +413,7 @@ $(document).ready(registerClickOnShip);
 };
 $(document).ready(placeShipInTable);
 
-var hoi =function(){
-  window.alert(localStorage.getItem('name'));
-}
-$(document).ready(hoi);
+
 
 
 
