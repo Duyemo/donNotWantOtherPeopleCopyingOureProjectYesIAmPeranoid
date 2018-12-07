@@ -24,11 +24,11 @@
             </ul>
         </div>
         
-<div id=form>
+<div id="form" >
     <form action="/play" method="get" >
         <p> Type in your in game name</p>
         <input type="text" name="name"><br>
-        <button type="submit"> Start the game </button>
+         <button type="submit"> Start the game </button> 
     </form>
     
 </div>
@@ -45,9 +45,24 @@
     </ul>
 
 </footer>
+<script>
+var hoi =function(){
+  localStorage.setItem('name', "duyemo");
+  }
+  $(document).ready(hoi);</script>
+<script> 
+//content = document.getElementsByClassName("form")[0];
+//kbButtons = content.getElementsByTagName("button");
+//$("kbButtons").on("click", function (event) {
+    //functionlocalStorage.setItem('name', 'duyemo');
+    
+    //});
+    //$(document).ready(turnShip);
+</script>
 <script src="app.js"> </script>
 <script src="javascripts/data.js"></script>
 <script src="routes/index.js"></script>
 <script src="javascripts/client.js"></script> 
+
 </body>
 </html>
