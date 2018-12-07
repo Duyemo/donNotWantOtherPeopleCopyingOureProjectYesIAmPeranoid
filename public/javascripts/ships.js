@@ -72,8 +72,13 @@ var registerClickOnShip = function () {
 
    //function that turns the selected ship
     document.addEventListener("keypress", function (event) {
-  
+      
+      //var keyPressed = event.keyCode;  
+     
+      // check if the button that is pressed is indead the spacebar
+    if(event.keyCode == 32){ 
     if(moving){
+     
       //removes the ship that you currently have selected
       (shipPlace).remove();
       shipPlace = null; 
@@ -139,6 +144,7 @@ var registerClickOnShip = function () {
       document.addEventListener("mousemove", move, false);
      
     }
+  }
  });
 
 };
