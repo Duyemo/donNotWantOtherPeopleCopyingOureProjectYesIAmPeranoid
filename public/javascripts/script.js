@@ -53,7 +53,7 @@ function colorChange(){
     document.getElementById("titel").style.color = "#87d0fe";
 }
 
-
+/*
 //Player's ships interraction
 var ship1 = document.getElementById("ship1");
 var ship2 = document.getElementById("ship2");
@@ -181,4 +181,4 @@ function addShipDouble(rowNumber, cellNumber)
     }
    }
 }
- }
+ } */

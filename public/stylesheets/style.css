@@ -121,6 +121,8 @@ li a {
   position: absolute;
   bottom: 100px;
   left: 75px;
+  /* small but o so important extra line of css that make sure the table is always on the forground, befor everything so it can always be clicked */
+  z-index: 1; 
  }
  main .OpponentTable{
  position: absolute;
@@ -191,12 +193,39 @@ li a {
   left: 575px;
  }
 
-
- /*#resetButton{
-   width: 100px;
-   height: 100px;
-   position: absolute;
-   top: 35%;
-   left: 45%;
+ #tripleShip1{
+  width: 35px;
+  height: 105px;
+  position: absolute;
+  top: 210px;
+  left: 50px;
+ }
+ #tripleShip2{
+  width: 35px;
+  height: 105px;
+  position: absolute;
+  top: 210px;
+  left: 10px;
+ }
+ #quadraShip1{
+  width: 35px;
+  height: 140px;
+  position: absolute;
+  top: 320px;
+  left: 50px;
+ }
+ #pentaShip1{
+  width: 35px;
+  height: 175px;
+  position: absolute;
+  top: 320px;
+  left: 10px;
+ }
+ #shipTurned{
+  /*Positions are heigh negative numbers so the ship doesn't appear on the screen 
+  in the time between the creation of the shipTurned and the mapping of that object to the mouse */
+  position: absolute;
+  left: -1000px;
+  top: -1000px;
   
-  }*/
+ }
