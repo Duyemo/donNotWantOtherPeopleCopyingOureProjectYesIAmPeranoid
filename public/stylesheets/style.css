@@ -229,12 +229,12 @@ li a {
   top: -1000px;
  }
 
- button:active{ /*hover*/
+ button:active{ 
    background-color: gray;
  }
  button:hover{
-   outline-color: black;
-   outline: 100px;
+   /*outline-color: black;
+   outline: 100px;*/
    border-color: #000000;
    border-width: 1px;
  }
