@@ -74,6 +74,7 @@ var registerClickOnShip = function () {
     document.addEventListener("keypress", function (event) {
       var keyPressed = event.keyCode;  
       
+      // check if the button that is pressed is indead the spacebar
       if(keyPressed == 32){ 
         
     if(moving){
