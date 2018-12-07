@@ -73,8 +73,6 @@ var registerClickOnShip = function () {
    //function that turns the selected ship
     document.addEventListener("keypress", function (event) {
       
-      //var keyPressed = event.keyCode;  
-     
       // check if the button that is pressed is indead the spacebar
     if(event.keyCode == 32){ 
     if(moving){
@@ -100,7 +98,7 @@ var registerClickOnShip = function () {
         shipTurned.src = "images/quadraShipTurned.gif";
       }
       if(heightOfShip == 175){
-        shipTurned = new Image(105, 35);
+        shipTurned = new Image(175, 35);
         shipTurned.src = "images/pentaShipTurned.gif";
       }
       if(widthOfShip == 70){
