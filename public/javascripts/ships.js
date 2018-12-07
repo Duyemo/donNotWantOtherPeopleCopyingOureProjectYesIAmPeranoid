@@ -100,7 +100,7 @@ var registerClickOnShip = function () {
         shipTurned.src = "images/quadraShipTurned.gif";
       }
       if(heightOfShip == 175){
-        shipTurned = new Image(105, 35);
+        shipTurned = new Image(175, 35);
         shipTurned.src = "images/pentaShipTurned.gif";
       }
       if(widthOfShip == 70){
