@@ -22,7 +22,7 @@ for (var i = 0, row; row = table.rows[i]; i++) {
 }
 
 var PlayerOne = new Players(name, field);
-alert(PlayerOne.getName());
+console.log(PlayerOne.getName());
 console.log(PlayerOne.getField());
 }
 
