@@ -16,19 +16,20 @@ var server = http.createServer(app);
 const wss = new websocket.Server({ server });
 
 wss.on("connection", function(ws) {
-
-
-    //let's slow down the server response time a bit to make the change visible on the client side
-    setTimeout(function() {
-        console.log("Connection state: "+ ws.readyState);
-        ws.send("Thanks for the message. --Your server.");
-        ws.close();
-        console.log("Connection state: "+ ws.readyState);
-    }, 2000);
-    
+    var i = 0;
+    ws.send("connected to server " + i);
     ws.on("message", function incoming(message) {
-        console.log("[LOG] " + message);
+        console.log(message);
+        i = i + 1;
     });
+});
+
+wss.on('connection', (ws) => {
+    ws.on('message', (m) => {
+        console.log('received: %s', m);
+    });
+
+    console.log(wss.clients.size);
 });
 
 server.listen(port);
