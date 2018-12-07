@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="stylesheets/style.css" rel="stylesheet" type="text/css">
+
+<link href="Gamepage.css" rel="stylesheet" type="text/css">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+</head>
+
+<body>
+        <main>
+                <header>
+                        <h1 id="titel">Battleship</h1>
+                </header>
+
+                <img id="ship1" src="images/ship1.gif" alt="ship1" >
+                <img id="ship2" src="images/ship1.gif" alt="ship2">
+                <img id="ship3" src="images/ship1.gif" alt="ship3" >
+                <img id="doubleShip1" src="images/doubleShip.gif" alt="doubleShip1" >
+                <img id="doubleShip2" src="images/doubleShip.gif" alt="doubleShip2" >
+
+
+                <img id=mis src="images/stillmis.png" alt="mis">
+                <img id=hit src="images/stillhit.png" alt="hit">
+
+                <h2 class="PlayersText">
+                        Player's ships
+                </h2>
+
+
+
+                <h2 class="OpponentsText">
+                        Opponents ships
+                </h2>
+
+                <table id="playerTable" class="PlayerTableClass" border="1" width="350" height="350">
+                        <thead>
+                                <td>-</td>
+                                <td>A</td>
+                                <td>B</td>
+                                <td>C</td>
+                                <td>D</td>
+                                <td>E</td>
+                                <td>F</td>
+                                <td>G</td>
+                                <td>H</td>
+                                <td>I</td>
+                                <td>J</td>
+                        </thead>
+                        <tr>
+                                <th class="table123">1</th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">2</th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">3</th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">4</th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">5</th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">6</th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">7</th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">8</th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">9</th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">10</th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                        </tr>
+                </table>
+
+
+
+                <table class="OpponentTable" border="1" width="350" height="350">
+                        <thead>
+                                <td>-</td>
+                                <td>A</td>
+                                <td>B</td>
+                                <td>C</td>
+                                <td>D</td>
+                                <td>E</td>
+                                <td>F</td>
+                                <td>G</td>
+                                <td>H</td>
+                                <td>I</td>
+                                <td>J</td>
+                        </thead>
+                        <tr>
+                                <th class="table123">1</th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">2</th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">3</th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">4</th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">5</th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">6</th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">7</th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">8</th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">9</th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                        </tr>
+                        <tr>
+                                <th class="table123">10</th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                                <th onClick="fire(this)"> </th>
+                        </tr>
+                </table>
+               
+                
+                <button id=gameChanger onclick="gameState()" type="button">In game</button>
+
+        </main>
+
+        <footer>
+
+                <ul>
+                        <p id="madeBy">Made by Duyemo and Marit</p>
+                        <li> <a href="https://twitter.com/Battles43567922">Twitter</a></li>
+                        <li> <a href="https://www.facebook.com/battle.ship.7731247">Facebook</a> </li>
+                        <li> <a href="https://www.instagram.com/battleshipdamr/?hl=engod">Instagram</a> </li>
+                </ul>
+        </footer>
+<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+<script src="javascripts/script.js"></script>
+
+</body>
+
+</html>

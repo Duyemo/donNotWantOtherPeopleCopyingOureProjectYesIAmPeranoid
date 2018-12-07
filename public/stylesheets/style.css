@@ -1,0 +1,202 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
+}
+
+#header{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1{
+  font-family: 'Comic Sans MS', 'cursive', sans-serif;
+  text-align: center;
+  font-size: 64px;
+  position: absolute;
+  top: 0px;
+  left: 40%;
+
+}
+
+#form{
+  margin: auto;
+  width: 60%;
+  border: 3px solid #000000;
+  padding: 10px;
+  text-align: center;
+  border-style: dotted;
+  border-color: tomato;
+}
+
+button{
+  width: 30%;
+  margin-top: 10%
+ 
+}
+
+#hit{
+  position: absolute;
+  left: 525px;
+  bottom: 0px;
+}
+#mis{
+  position: absolute;
+  right: 525px;
+  bottom: 0px;
+}
+
+#stats{
+  float: right;
+  border: 3px solid #000000;
+}
+
+/* footer stuff */
+footer{
+  width: 100%;
+    height: 50px;
+    background: #87d0fe;
+   
+    position: fixed;
+    bottom: 0px; left: 0; 
+}
+
+ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0;
+  overflow: hidden;
+  font-size: 100%; 
+  
+}
+
+
+
+#madeBy{
+  float: right;
+  color: white;
+  right: 5px;
+}
+
+li a {
+  display: block;
+  padding: 20px 16px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  float: left;
+
+}
+
+
+ main{
+  min-width: 70;
+ }
+
+ main .PlayersText{
+  position: absolute;
+  top: 115px;
+  left: 75px; 
+ }
+ main .OpponentsText{
+  position: absolute;
+  top: 115px;
+  right: 75px; 
+ }
+
+ /* the tables */
+ table{
+  table-layout: fixed;
+  width: 450px;
+  height: 450px;
+ }
+ tr{
+     height: 40px;
+ }
+ th{
+     width: 40px;
+ }
+ 
+ main .PlayerTableClass{
+  position: absolute;
+  bottom: 100px;
+  left: 75px;
+ }
+ main .OpponentTable{
+ position: absolute;
+ bottom: 100px;
+ right: 75px; 
+ }
+ 
+ thead{
+     border: none;
+     outline: none;
+ }
+ thead td {
+  text-align: center;
+  outline: none;
+  border: none;
+ }
+ .table123{
+  text-align: center;
+  outline: none;
+  border: none;
+ }
+
+ 
+ #gameChanger{
+   width: 10%;
+   position: absolute;
+   bottom: 20%;
+  left: 45%;
+ }
+
+/* the ships */
+ #ship1{
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 150px;
+  left: 525px;
+ }
+ 
+ #ship2{
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 150px;
+  left: 550px;
+ }
+ 
+ #ship3{
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 150px;
+  left: 575px;
+ }
+ 
+ #doubleShip1{
+  width: 35px;
+  height: 70px;
+  position: absolute;
+  top: 200px;
+  left: 525px;
+ }
+ #doubleShip2{
+  width: 35px;
+  height: 70px;
+  position: absolute;
+  top: 200px;
+  left: 575px;
+ }
+
+
+ /*#resetButton{
+   width: 100px;
+   height: 100px;
+   position: absolute;
+   top: 35%;
+   left: 45%;
+  
+  }*/
