@@ -29,7 +29,7 @@ wss.on('connection', (ws) => {
         console.log('received: %s', m);
     });
 
-    console.log(wss.clients.size);
+    console.log(wss.clients);
 });
 
 server.listen(port);
