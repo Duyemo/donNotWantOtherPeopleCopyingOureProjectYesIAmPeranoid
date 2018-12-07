@@ -191,6 +191,7 @@ $(document).ready(registerClickOnShip);
         
         //give image the just source-code and place it in the cell. 
         img.src = imageSrc;
+        
         cell.appendChild(img);
         
         //set the id of the cell to "contains" to mark that the cell contains a ship 
