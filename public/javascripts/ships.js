@@ -197,13 +197,54 @@ $(document).ready(registerClickOnShip);
         //set the id of the cell to "contains" to mark that the cell contains a ship 
         cell.id = "contains";
       }
+
+
+      //checks if al spaces arround where you want to place the ship are empty
+    function isEmptyArround(rowNumber, cellNumber){
+       if(rowNumber<10 && cellNumber<10){
+        if(document.getElementById("playerTable").rows[rowNumber].cells[cellNumber].id !="contains" &&
+          document.getElementById("playerTable").rows[rowNumber+1].cells[cellNumber].id !="contains" &&
+          document.getElementById("playerTable").rows[rowNumber-1].cells[cellNumber].id !="contains" &&
+          document.getElementById("playerTable").rows[rowNumber].cells[cellNumber+1].id !="contains" &&
+          document.getElementById("playerTable").rows[rowNumber].cells[cellNumber-1].id !="contains"){
+          return true; }
+        else{ return false;}
+       }
+       
+       if(rowNumber==10 && cellNumber<10){
+         if(document.getElementById("playerTable").rows[rowNumber].cells[cellNumber].id !="contains" &&
+          document.getElementById("playerTable").rows[rowNumber-1].cells[cellNumber].id !="contains" &&
+          document.getElementById("playerTable").rows[rowNumber].cells[cellNumber+1].id !="contains" &&
+          document.getElementById("playerTable").rows[rowNumber].cells[cellNumber-1].id !="contains"){
+          return true; }
+       else{ return false;}
+       }
+       
+       if(rowNumber<10 && cellNumber==10){
+        if(document.getElementById("playerTable").rows[rowNumber].cells[cellNumber].id !="contains" &&
+         document.getElementById("playerTable").rows[rowNumber+1].cells[cellNumber].id !="contains" &&
+         document.getElementById("playerTable").rows[rowNumber-1].cells[cellNumber].id !="contains" &&
+         document.getElementById("playerTable").rows[rowNumber].cells[cellNumber-1].id !="contains"){
+         return true; }
+      else{ return false;}
+      }
+       
+      if(rowNumber==10 && cellNumber==10){
+        if(document.getElementById("playerTable").rows[rowNumber].cells[cellNumber].id !="contains" &&
+         document.getElementById("playerTable").rows[rowNumber-1].cells[cellNumber].id !="contains" &&
+         document.getElementById("playerTable").rows[rowNumber].cells[cellNumber-1].id !="contains"){
+         return true; }
+      else{ return false;}
+      }
+
+     }
   
       
     function addShipSingle(rowNumber, cellNumber){  
               
               //checks if their is enough space to place the ship
               if(rowNumber>=1 && cellNumber>=1 && shipPlace != null &&
-                document.getElementById("playerTable").rows[rowNumber].cells[cellNumber].id !="contains"){
+                isEmptyArround(rowNumber, cellNumber)){
                 
                   //checks if you selected a ship
               if(moving){
@@ -223,8 +264,8 @@ $(document).ready(registerClickOnShip);
              
                 //checks if their is enough space to place the ship
               if(rowNumber>=1 && cellNumber>=1 && shipPlace != null &&     
-                document.getElementById("playerTable").rows[rowNumber].cells[cellNumber].id !="contains" &&
-                document.getElementById("playerTable").rows[rowNumber+1].cells[cellNumber].id !="contains" ){   
+                isEmptyArround(rowNumber, cellNumber) &&
+                isEmptyArround(rowNumber+1, cellNumber)){   
               
                   //checks if you selected a ship
               if(moving){                                                                                      
@@ -243,9 +284,9 @@ $(document).ready(registerClickOnShip);
     function addShipTriple(rowNumber, cellNumber){  
                //checks if their is enough space to place the ship
               if(rowNumber>=1 && cellNumber>=1 && shipPlace != null &&     
-                document.getElementById("playerTable").rows[rowNumber].cells[cellNumber].id !="contains" &&
-                document.getElementById("playerTable").rows[rowNumber+1].cells[cellNumber].id !="contains" &&
-                document.getElementById("playerTable").rows[rowNumber+2].cells[cellNumber].id !="contains"){   
+                isEmptyArround(rowNumber, cellNumber) &&
+                isEmptyArround(rowNumber+1, cellNumber) &&
+                isEmptyArround(rowNumber+2, cellNumber)){   
              
               //checks if you selected a ship
               if(moving){                                                                                      
@@ -267,10 +308,10 @@ $(document).ready(registerClickOnShip);
              
               //checks if their is enough space to place the ship
               if(rowNumber>=1 && cellNumber>=1 && shipPlace != null &&     
-               document.getElementById("playerTable").rows[rowNumber].cells[cellNumber].id !="contains" &&
-               document.getElementById("playerTable").rows[rowNumber+1].cells[cellNumber].id !="contains" &&
-               document.getElementById("playerTable").rows[rowNumber+2].cells[cellNumber].id !="contains" &&
-               document.getElementById("playerTable").rows[rowNumber+3].cells[cellNumber].id !="contains"){   
+                isEmptyArround(rowNumber, cellNumber) &&
+                isEmptyArround(rowNumber+1, cellNumber) &&
+                isEmptyArround(rowNumber+2, cellNumber) &&
+                isEmptyArround(rowNumber+3, cellNumber)){   
             
               //checks if you selected a ship
               if(moving){                                                                                      
@@ -293,11 +334,11 @@ $(document).ready(registerClickOnShip);
               
               //checks if their is enough space to place the ship
               if(rowNumber>=1 && cellNumber>=1 && shipPlace != null &&     
-               document.getElementById("playerTable").rows[rowNumber].cells[cellNumber].id !="contains" &&
-               document.getElementById("playerTable").rows[rowNumber+1].cells[cellNumber].id !="contains" &&
-               document.getElementById("playerTable").rows[rowNumber+2].cells[cellNumber].id !="contains" &&
-               document.getElementById("playerTable").rows[rowNumber+3].cells[cellNumber].id !="contains" &&
-               document.getElementById("playerTable").rows[rowNumber+4].cells[cellNumber].id !="contains"){   
+                isEmptyArround(rowNumber, cellNumber) &&
+                isEmptyArround(rowNumber+1, cellNumber) &&
+                isEmptyArround(rowNumber+2, cellNumber) &&
+                isEmptyArround(rowNumber+3, cellNumber) &&
+                isEmptyArround(rowNumber+4, cellNumber)){   
             
               //checks if you selected a ship
               if(moving){                                                                                      
@@ -321,8 +362,8 @@ $(document).ready(registerClickOnShip);
              
               //checks if their is enough space to place the ship
               if(rowNumber>=1 && cellNumber>=1 && shipPlace != null &&     
-                document.getElementById("playerTable").rows[rowNumber].cells[cellNumber].id !="contains" &&
-                document.getElementById("playerTable").rows[rowNumber].cells[cellNumber+1].id !="contains" ){   
+                isEmptyArround(rowNumber, cellNumber) &&
+                isEmptyArround(rowNumber, cellNumber+1) ){   
               
               //checks if you selected a ship
               if(moving){                                                                                      
@@ -341,9 +382,9 @@ $(document).ready(registerClickOnShip);
 
     function addShipTripleTurned(rowNumber, cellNumber){
       if(rowNumber>=1 && cellNumber>=1 && shipPlace != null &&     
-        document.getElementById("playerTable").rows[rowNumber].cells[cellNumber].id !="contains" &&
-        document.getElementById("playerTable").rows[rowNumber].cells[cellNumber+1].id !="contains" &&
-        document.getElementById("playerTable").rows[rowNumber].cells[cellNumber+2].id !="contains"){   
+        isEmptyArround(rowNumber, cellNumber) &&
+        isEmptyArround(rowNumber, cellNumber+1) &&
+        isEmptyArround(rowNumber, cellNumber+2)){   
       
       //checks if you selected a ship
       if(moving){                                                                                      
@@ -363,10 +404,10 @@ $(document).ready(registerClickOnShip);
 
     function addShipQuadraTurned(rowNumber, cellNumber){
         if(rowNumber>=1 && cellNumber>=1 && shipPlace != null &&     
-          document.getElementById("playerTable").rows[rowNumber].cells[cellNumber].id !="contains" &&
-          document.getElementById("playerTable").rows[rowNumber].cells[cellNumber+1].id !="contains" &&
-          document.getElementById("playerTable").rows[rowNumber].cells[cellNumber+2].id !="contains"&&
-          document.getElementById("playerTable").rows[rowNumber].cells[cellNumber+3].id !="contains" ){   
+          isEmptyArround(rowNumber, cellNumber) &&
+          isEmptyArround(rowNumber, cellNumber+1) &&
+          isEmptyArround(rowNumber, cellNumber+2) &&
+          isEmptyArround(rowNumber, cellNumber+3)){   
         
         //checks if you selected a ship
         if(moving){                                                                                      
@@ -387,11 +428,11 @@ $(document).ready(registerClickOnShip);
 
     function addShipPentaTurned(rowNumber, cellNumber){
         if(rowNumber>=1 && cellNumber>=1 && shipPlace != null &&     
-          document.getElementById("playerTable").rows[rowNumber].cells[cellNumber].id !="contains" &&
-          document.getElementById("playerTable").rows[rowNumber].cells[cellNumber+1].id !="contains" &&
-          document.getElementById("playerTable").rows[rowNumber].cells[cellNumber+2].id !="contains" &&
-          document.getElementById("playerTable").rows[rowNumber].cells[cellNumber+3].id !="contains" &&
-          document.getElementById("playerTable").rows[rowNumber].cells[cellNumber+3].id !="contains"){   
+          isEmptyArround(rowNumber, cellNumber) &&
+          isEmptyArround(rowNumber, cellNumber+1) &&
+          isEmptyArround(rowNumber, cellNumber+2) &&
+          isEmptyArround(rowNumber, cellNumber+3) &&
+          isEmptyArround(rowNumber, cellNumber+4)){   
         
         //checks if you selected a ship
         if(moving){                                                                                      
