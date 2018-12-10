@@ -43,6 +43,7 @@ button{
 button:hover{
   border-color: #000000;
   border-width: 1px;
+  cursor: pointer;
 }
 
 
@@ -60,9 +61,11 @@ button:hover{
 
 #stats{
   float: right;
+  width: 15%;
   border: 3px solid #000000;
   padding: 10px;
   margin: 10px;
+  
 }
 
 /* footer stuff */
