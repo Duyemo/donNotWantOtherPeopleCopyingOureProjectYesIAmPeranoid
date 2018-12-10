@@ -1,6 +1,3 @@
-
-
-colorChange();
 console.log(document.getElementById("Nickname").value);
 // changes the game state
 // 0 is before the game
@@ -58,7 +55,5 @@ function mis() {
 
 }
 
-function colorChange(){
-    document.getElementById("titel").style.color = "#87d0fe";
-}
+
 
