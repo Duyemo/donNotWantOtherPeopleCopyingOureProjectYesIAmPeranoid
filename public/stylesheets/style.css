@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
+  overflow: hidden;
 }
 
 #header{
@@ -27,6 +28,7 @@ h1{
   text-align: center;
   border-style: dotted;
   border-color: tomato;
+  
 }
 
 
@@ -41,6 +43,7 @@ button{
 button:hover{
   border-color: #000000;
   border-width: 1px;
+  cursor: pointer;
 }
 
 
@@ -58,7 +61,11 @@ button:hover{
 
 #stats{
   float: right;
+  width: 15%;
   border: 3px solid #000000;
+  padding: 10px;
+  margin: 10px;
+  
 }
 
 /* footer stuff */
@@ -86,6 +93,7 @@ ul {
   float: right;
   color: white;
   right: 5px;
+  padding: 5px;
 }
 
 li a {
@@ -105,16 +113,24 @@ li a {
 
  main .PlayersText{
   position: absolute;
-  top: 115px;
+  top: 70px;
   left: 75px; 
+  width: 495x;
+  border: 0px;
+  padding: 10px;
+  margin: 5px;
  }
  main .PlayersText::after{
    content: "ships";
  }
  main .OpponentsText{
   position: absolute;
-  top: 115px;
-  right: 75px; 
+  bottom: 600px;
+  left: 950px; 
+  width: 495px;
+  border: 0px;
+  padding: 10px;
+  margin: 5px;
  }
  main .OpponentsText::before{
    content: "Opponents"; 
@@ -144,7 +160,7 @@ li a {
  main .OpponentTable{
  position: absolute;
  bottom: 100px;
- right: 75px; 
+ left: 975px 
  }
  
  thead{
@@ -245,5 +261,40 @@ li a {
   left: -1000px;
   top: -1000px;
  }
-
  
+ .numberOfOngoingGames::after{
+  content: "games are currently playing";
+ }
+ .onlinePlayers::after{
+   content: "players are online";
+ }
+ .gamesPlayed::after{
+  content: "games have been played";
+}
+.Made::before{
+  content: "Made";
+}
+
+
+.splashShip{
+  width: 0px; 
+  position: relative;
+ 
+  -webkit-animation-name: shipSplash; 
+  -webkit-animation-duration: 5s; 
+  -webkit-animation-timing-function: linear;
+  animation-name: shipSplash;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@-webkit-keyframes shipSplash {
+  0%   {left:1500px; top:90px;}
+  100%  {left:-700px; top:90px;}
+}
+
+@keyframes shipSplash {
+  0%   {left:1500px; top:90px;}
+  100%  {left:-700px; top:90px;}
+}
