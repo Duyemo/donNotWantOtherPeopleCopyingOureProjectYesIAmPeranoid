@@ -108,10 +108,17 @@ li a {
   top: 115px;
   left: 75px; 
  }
+ main .PlayersText::after{
+   content: "ships";
+ }
  main .OpponentsText{
   position: absolute;
   top: 115px;
   right: 75px; 
+ }
+ main .OpponentsText::before{
+   content: "Opponents"; 
+   color: blue;
  }
 
  /* the tables */
