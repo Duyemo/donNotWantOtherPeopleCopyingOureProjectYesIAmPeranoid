@@ -1,8 +1,9 @@
-//console.log(document.getElementById("Nickname").value);
+
 // changes the game state
 // 0 is before the game
 // 1 is when playing
 function gameState() {
+    
     
     console.log("start the game");
     
