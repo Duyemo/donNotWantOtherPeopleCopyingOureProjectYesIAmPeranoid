@@ -28,6 +28,7 @@ h1{
   text-align: center;
   border-style: dotted;
   border-color: tomato;
+  
 }
 
 
@@ -89,6 +90,7 @@ ul {
   float: right;
   color: white;
   right: 5px;
+  padding: 5px;
 }
 
 li a {
