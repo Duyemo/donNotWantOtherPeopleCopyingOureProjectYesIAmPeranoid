@@ -7,6 +7,9 @@ var websocket = require("ws");
 var port = process.argv[2];
 var app = express();
 
+var Game = require("./game");
+var gameList = [];
+
 // make client array
 queue = [];
 
@@ -28,7 +31,6 @@ wss.on("connection", function(ws) {
     // push the new client to the clients array
     queue.push(ws);
     ws.send("connected to server ");
-    
     ws.on("message", function incoming(message) {
         console.log(message);
       
@@ -50,8 +52,13 @@ wss.on('connection', (ws) => {
 wss.on("connection", function(ws) {
 // if we have two players connected we do somthing
 if(queue.length >= 2){
-    queue.shift().send("you are player one");
-    queue.shift().send("you are player two");
+    var playerOne = queue.shift();
+    var playerTwo = queue.shift();
+
+    var game = new Game(playerOne, playerTwo);
+    gameList.push(game);
+    console.log(gameList.length);
+   
 }
 });
 

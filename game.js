@@ -7,7 +7,7 @@ function Players(name, field){
     
 }
 
-function Game(playerOne, playerTwo){
+var Game = function(playerOne, playerTwo){
     this.playerOne = playerOne;
     this.playerTwo = playerTwo;
 
@@ -15,5 +15,5 @@ function Game(playerOne, playerTwo){
     this.getPlayerTwo = function(){return this.playerTwo;};
 }
 
-
+module.exports = Game;
  
