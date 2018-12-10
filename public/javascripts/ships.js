@@ -183,7 +183,6 @@ $(document).ready(registerClickOnShip);
       
 
     function generalAdder(rowNumber, cellNumber, imageSrc){
-      
            
         //select the right cell and create an image          
         var row = document.getElementById("playerTable").rows[rowNumber];
