@@ -10,6 +10,8 @@ var app = express();
 var Game = require("./game");
 var gameList = [];
 
+var gameState = require("./public/javascripts/script");
+
 // make client array
 queue = [];
 
@@ -52,15 +54,21 @@ wss.on('connection', (ws) => {
 wss.on("connection", function(ws) {
 // if we have two players connected we do somthing
 if(queue.length >= 2){
-    var playerOne = queue.shift();
-    var playerTwo = queue.shift();
+    var playerOne = queue.shift();0
+    var playerTwo = queue.shift();9
+    
+    var game = new Game(playerOne, playerTwo, 1);
+    game.getPlayerOne().send("you connected to a player");
+    game.getPlayerTwo().send("you connected to a player");
 
-    var game = new Game(playerOne, playerTwo);
+    
+
     gameList.push(game);
     console.log(gameList.length);
    
 }
 });
+
 
 
 // listens to port 3000

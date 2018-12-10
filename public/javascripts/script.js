@@ -2,29 +2,28 @@
 // changes the game state
 // 0 is before the game
 // 1 is when playing
-function gameState() {
-    
-    
-    console.log("start the game");
-    
-    var name = "Test"
+var gameState = function GameState() {
+
+    // var name = "Test"
     var table = document.getElementById("playerTable");
     var field = [];
- //iterate through rows
-for (var i = 0, row; row = table.rows[i]; i++) {
-    //iterate through columns
-   for (var j = 0, col; col = row.cells[j]; j++) {
-    //gets if it contains a ship, then pushes it to the array
-     field.push(col.id);
-   }  
+    //iterate through rows
+    for (var i = 0, row; row = table.rows[i]; i++) {
+        //iterate through columns
+        for (var j = 0, col; col = row.cells[j]; j++) {
+            //gets if it contains a ship, then pushes it to the array
+            field.push(col.id);
+        }
+    }
+    console.log("I clicked");
+
+    return{
+        isClicked: true,
+        field: field
+    }
 }
 
-var PlayerOne = new Players(name, field);
-console.log(PlayerOne.getName());
-console.log(PlayerOne.getField());
-}
-
-
+// module.exports = gameState;
 
 function fire(elem) {
     var shipStat = 0;
