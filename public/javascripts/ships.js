@@ -369,8 +369,8 @@ $(document).ready(registerClickOnShip);
               if(moving){                                                                                      
                 
                //add the parts of the ship to the table
-               generalAdder(rowNumber, cellNumber, "images/ship1.gif");
-               generalAdder(rowNumber, cellNumber+1, "images/ship1.gif");
+               generalAdder(rowNumber, cellNumber, "images/doubleShipTurnedTop.gif");
+               generalAdder(rowNumber, cellNumber+1, "images/DoubleShipTurnedBot.gif");
               
               //commands that delets the selected ship so you can't re-use it
               (shipPlace).remove();
