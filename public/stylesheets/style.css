@@ -278,10 +278,12 @@ li a {
   position: relative;
  
   -webkit-animation-name: shipSplash; 
-  -webkit-animation-duration: 7s; 
+  -webkit-animation-duration: 5s; 
+  -webkit-animation-timing-function: linear;
   animation-name: shipSplash;
-  animation-duration: 7s;
+  animation-duration: 5s;
   animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 @-webkit-keyframes shipSplash {
