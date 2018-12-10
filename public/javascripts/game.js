@@ -6,3 +6,14 @@ function Players(name, field){
     this.getField = function(){return this.field;};
     
 }
+
+function Game(playerOne, playerTwo){
+    this.playerOne = playerOne;
+    this.playerTwo = playerTwo;
+
+    this.getPlayerOne = function(){return this.playerOne;};
+    this.getPlayerTwo = function(){return this.playerTwo;};
+}
+
+
+ 

@@ -4,6 +4,7 @@
 // 1 is when playing
 function gameState() {
     
+    
     console.log("start the game");
     
     var name = "Test"
