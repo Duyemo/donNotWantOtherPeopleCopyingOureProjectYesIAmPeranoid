@@ -1,4 +1,4 @@
-console.log(document.getElementById("Nickname").value);
+//console.log(document.getElementById("Nickname").value);
 // changes the game state
 // 0 is before the game
 // 1 is when playing
