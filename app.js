@@ -28,6 +28,9 @@ var server = http.createServer(app);
 //create websocket
 const wss = new websocket.Server({ server });
 
+// make a game
+var currentGame = new Game();
+
 // if connected, sends connected to server. And print to console log messages from server
 wss.on("connection", function(ws) {
 
@@ -42,6 +45,17 @@ wss.on("connection", function(ws) {
         console.log('received: %s', message);
         let inMSG = JSON.parse(message);
         console.log(inMSG);
+        console.log(Message.O_PLAYER_READY);
+
+        if(inMSG.type == "PLAYER_READY"){
+                // do stuff
+                console.log(currentGame.getGameStatus());
+                currentGame.nextGameStatus();
+                console.log(currentGame.getGameStatus());
+        }
+
+       
+
       
     });
     
@@ -58,17 +72,19 @@ wss.on('connection', (ws) => {
 wss.on("connection", function(ws) {
 // if we have two players connected we do somthing
 if(queue.length >= 2){
-    var playerOne = queue.shift();0
-    var playerTwo = queue.shift();9
+    var playerOne = queue.shift();
+    var playerTwo = queue.shift();
     
-    var game = new Game(playerOne, playerTwo, 1);
-    game.getPlayerOne().send("you connected to a player 1");
-    game.getPlayerTwo().send("you connected to a player");
+    currentGame.addPlayerOne(playerOne);
+    currentGame.addPlayerTwo(playerTwo);
+    
+    currentGame.getPlayerOne().send("you connected to a player");
+    currentGame.getPlayerTwo().send("you connected to a player");
    
 
     
 
-    gameList.push(game);
+    gameList.push(currentGame);
     console.log("the gamelist length is:", gameList.length);
    
 }

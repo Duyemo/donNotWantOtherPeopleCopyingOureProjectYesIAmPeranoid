@@ -7,11 +7,11 @@ function Players(name, field){
     
 }
 
-var Game = function(playerOne, playerTwo, gameStatus){
-    this.playerOne = playerOne;
-    this.playerTwo = playerTwo;
+var Game = function(){
+    this.playerOne = null;
+    this.playerTwo = null;
     
-    this.gameStatus = gameStatus;
+    this.gameStatus = 0;
 
     this.playerTwoReady = false;
     this.playerTwoReady = false;
@@ -19,10 +19,15 @@ var Game = function(playerOne, playerTwo, gameStatus){
     this.getPlayerOne = function(){return this.playerOne;};
     this.getPlayerTwo = function(){return this.playerTwo;};
 
+    this.addPlayerOne = function(p){return this.playerOne = p;};
+    this.addPlayerTwo = function(p){return this.playerTwo = p;};
+
     this.getGameStatus = function(){return this.gameStatus;};
 
     this.isPlayerOneReady = function(){return this.isPlayerOneReady;};
     this.isPlayerTwoReady = function(){return this.isPlayerTwoReady;};
+
+    this.nextGameStatus = function(){this.gameStatus = this.gameStatus + 1;};
 }
 
 

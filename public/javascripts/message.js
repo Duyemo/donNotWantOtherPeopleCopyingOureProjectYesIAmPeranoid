@@ -13,13 +13,9 @@ exports.S_GAME_ABORTED = JSON.stringify(exports.O_GAME_ABORTED);
 exports.O_PLAYER_READY = {type: "PLAYER_READY"};
 exports.S_PLAYER_READY = JSON.stringify(exports.O_PLAYER_READY);
 
-/*  Server to client: set player one */
-exports.O_PLAYER_ONE_READY = {type: "PLAYER_ONE_READY"};
-exports.S_PLAYER_ONE_READY = JSON.stringify(exports.O_PLAYER_ONE_READY);
-
-/* Server to client: set player two */
-exports.O_PLAYER_TWO_READY = {type: "PLAYER_TWO_READY"};
-exports.S_PLAYER_TWO_READY = JSON.stringify(exports.O_PLAYER_TWO_READY);
+/* server to client: both are ready */
+exports.O_BOTH_READY = {type: "BOTH_READY"};
+exports.S_BOTH_READY = JSON.stringify(exports.O_BOTH_READY);
 
 /* Players to server: done with moving the boats */
 
