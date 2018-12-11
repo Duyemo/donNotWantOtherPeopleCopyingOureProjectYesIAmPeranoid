@@ -10,7 +10,7 @@ var app = express();
 var Game = require("./game");
 var gameList = [];
 
-var gameState = require("./public/javascripts/script");
+var Message = require("./public/javascripts/message");
 
 // make client array
 queue = [];
@@ -30,13 +30,18 @@ const wss = new websocket.Server({ server });
 
 // if connected, sends connected to server. And print to console log messages from server
 wss.on("connection", function(ws) {
+
     // push the new client to the clients array
     queue.push(ws);
 
+    
     ws.send("connected to server ");
-
+    
+    // for all the incomming messages
     ws.on("message", function incoming(message) {
         console.log('received: %s', message);
+        let inMSG = JSON.parse(message);
+        console.log(inMSG);
       
     });
     

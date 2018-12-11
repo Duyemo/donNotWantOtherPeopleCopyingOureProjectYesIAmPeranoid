@@ -16,7 +16,7 @@ function gameState() {
         }
     }
     
-    socket.send(message.S_PLAYER_READY);
+    socket.send(Messages.S_PLAYER_READY);
         
     
     document.getElementById("gameChanger").removeEventListener("click", gameState);
@@ -31,7 +31,7 @@ function gameState() {
 
     // when we are open we start the whole game
     socket.onopen = function(){
-        socket.send("connected");
+        socket.send(Messages.S_CONNECTED);
         start();
     };
 })();

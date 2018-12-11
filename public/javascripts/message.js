@@ -1,5 +1,7 @@
 (function(exports){
-
+/* client to server : connected */
+exports.O_CONNECTED = {type: "CONNECTED"};
+exports.S_CONNECTED = JSON.stringify(exports.O_CONNECTED);
 
 /* client to server: game is over, the winner is: */
 
