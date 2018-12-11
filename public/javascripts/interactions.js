@@ -1,7 +1,7 @@
-// changes the game state
-// 0 is before the game
-// 1 is when playing
+
 var socket = new WebSocket("ws://localhost:3000");
+
+
 function gameState() {
     
 
@@ -16,28 +16,30 @@ function gameState() {
         }
     }
     
-    socket.send("klikkkk!");
+    socket.send(message.S_PLAYER_READY);
         
     
-
+    document.getElementById("gameChanger").removeEventListener("click", gameState);
 };
 
-(function setup(){
-    //var socket = new WebSocket("ws://localhost:3000");
+(function setup(){    
 
-    
-
+    // if we have an incomming message we put it in the console
     socket.onmessage = function(event){
         console.log(event.data);
     };
 
+    // when we are open we start the whole game
     socket.onopen = function(){
         socket.send("connected");
         start();
     };
 })();
 
+// start the game
 function start(){
+
+    // make button which point to the function
     document.getElementById("gameChanger").addEventListener("click", gameState);
 
     

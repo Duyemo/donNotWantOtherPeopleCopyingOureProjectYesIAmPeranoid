@@ -7,6 +7,10 @@
 exports.O_GAME_ABORTED = {type: "GAME-ABORTED"};
 exports.S_GAME_ABORTED = JSON.stringify(exports.O_GAME_ABORTED);
 
+/* client to server: I'm ready */
+exports.O_PLAYER_READY = {type: "PLAYER_READY"};
+exports.S_PLAYER_READY = JSON.stringify(exports.O_PLAYER_READY);
+
 /*  Server to client: set player one */
 exports.O_PLAYER_ONE_READY = {type: "PLAYER_ONE_READY"};
 exports.S_PLAYER_ONE_READY = JSON.stringify(exports.O_PLAYER_ONE_READY);
