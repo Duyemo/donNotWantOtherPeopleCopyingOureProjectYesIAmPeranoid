@@ -1,6 +1,7 @@
 
 var socket = new WebSocket("ws://localhost:3000");
-
+var whichPlayer = "none";
+var yourTurn = false;
 
 function gameState() {
     
@@ -31,10 +32,14 @@ function gameState() {
         
         if(inMSg.type == "PLAYER_ONE"){
             console.log("You are player one");
+            whichPlayer = "Player one";
+            yourTurn = true;
         }
 
         if(inMSg.type == "PLAYER_TWO"){
             console.log("You are player two");
+            whichPlayer = "Player two";
+            yourTurn = false;   
         }
 
         if(inMSg.type == "BOTH_READY"){
@@ -50,11 +55,13 @@ function gameState() {
     };
 })();
 
+
 // start the game
 function start(){
 
     // make button which point to the function
     document.getElementById("gameChanger").addEventListener("click", gameState);
+    
 
     
 

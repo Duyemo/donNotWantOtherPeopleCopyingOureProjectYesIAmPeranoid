@@ -25,9 +25,9 @@ exports.S_PLAYER_ONE = JSON.stringify(exports.O_PLAYER_ONE);
 exports.O_PLAYER_TWO = {type: "PLAYER_TWO"};
 exports.S_PLAYER_TWO = JSON.stringify(exports.O_PLAYER_TWO);
 
-/* Players to server: done with moving the boats */
-
-/* players to server: want to fire here */
+/* players to server: shot fired */
+exports.O_SHOT_FIRED = {type: "SHOT_FIRED"};
+exports.S_SHOT_FIRED = JSON.stringify(exports.O_SHOT_FIRED);
 
 /* server to player: hit */
 
