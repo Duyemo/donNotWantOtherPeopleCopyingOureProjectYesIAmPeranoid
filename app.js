@@ -38,14 +38,16 @@ wss.on("connection", function(ws) {
     queue.push(ws);
 
     
-    ws.send("connected to server ");
+    ws.send(Message.S_CONNECTED);
     
     // for all the incomming messages
     ws.on("message", function incoming(message) {
         console.log('received: %s', message);
         let inMSG = JSON.parse(message);
         console.log(inMSG);
-        console.log(Message.O_PLAYER_READY);
+        
+
+        
 
         if(inMSG.type == "PLAYER_READY"){
                 // do stuff
@@ -54,7 +56,10 @@ wss.on("connection", function(ws) {
                 console.log(currentGame.getGameStatus());
         }
 
-       
+       if(currentGame.getGameStatus() == 2){
+           currentGame.getPlayerOne().send(Message.S_BOTH_READY);
+           currentGame.getPlayerTwo().send(Message.S_BOTH_READY);
+       }
 
       
     });
@@ -78,8 +83,8 @@ if(queue.length >= 2){
     currentGame.addPlayerOne(playerOne);
     currentGame.addPlayerTwo(playerTwo);
     
-    currentGame.getPlayerOne().send("you connected to a player");
-    currentGame.getPlayerTwo().send("you connected to a player");
+    currentGame.getPlayerOne().send(Message.S_PLAYER_ONE);
+    currentGame.getPlayerTwo().send(Message.S_PLAYER_TWO);
    
 
     

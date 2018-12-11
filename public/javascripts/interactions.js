@@ -15,7 +15,7 @@ function gameState() {
             field.push(col.id);
         }
     }
-    
+    console.log("you are ready");
     socket.send(Messages.S_PLAYER_READY);
         
     
@@ -27,6 +27,20 @@ function gameState() {
     // if we have an incomming message we put it in the console
     socket.onmessage = function(event){
         console.log(event.data);
+        let inMSg = JSON.parse(event.data);
+        
+        if(inMSg.type == "PLAYER_ONE"){
+            console.log("You are player one");
+        }
+
+        if(inMSg.type == "PLAYER_TWO"){
+            console.log("You are player two");
+        }
+
+        if(inMSg.type == "BOTH_READY"){
+            console.log("You are both ready");
+            document.getElementById("OpponentsTextId").innerHTML = "Oppents ships"; 
+        }
     };
 
     // when we are open we start the whole game

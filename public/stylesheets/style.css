@@ -133,7 +133,7 @@ li a {
   margin: 5px;
  }
  main .OpponentsText::before{
-   content: "Opponents"; 
+   /* content: "Opponents";  */
    color: blue;
  }
 

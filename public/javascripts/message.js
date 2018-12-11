@@ -17,6 +17,14 @@ exports.S_PLAYER_READY = JSON.stringify(exports.O_PLAYER_READY);
 exports.O_BOTH_READY = {type: "BOTH_READY"};
 exports.S_BOTH_READY = JSON.stringify(exports.O_BOTH_READY);
 
+/* server to client: you are player one */
+exports.O_PLAYER_ONE = {type: "PLAYER_ONE"};
+exports.S_PLAYER_ONE = JSON.stringify(exports.O_PLAYER_ONE);
+
+/* server to client: you are player two */
+exports.O_PLAYER_TWO = {type: "PLAYER_TWO"};
+exports.S_PLAYER_TWO = JSON.stringify(exports.O_PLAYER_TWO);
+
 /* Players to server: done with moving the boats */
 
 /* players to server: want to fire here */
