@@ -1,9 +1,8 @@
-//besically the whole js code is renewed. so just 100% override this part
- 
+//js page containing the interactions for the ship, inculding placing them into the table
 //variable that says if their is a ship mapped to your mouse
 var moving = false;
 
-//variables for the ship
+//variables for the ship that your currently have selected
 var heightOfShip =0;  
 var widthOfShip =0; 
 var oneForOne = false;
