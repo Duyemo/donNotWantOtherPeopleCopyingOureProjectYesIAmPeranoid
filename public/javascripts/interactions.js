@@ -1,9 +1,9 @@
 // changes the game state
 // 0 is before the game
 // 1 is when playing
-var test = 0;
-function gameState() {
 
+function gameState() {
+    var socket = new WebSocket("ws://localhost:3000");
 
     var table = document.getElementById("playerTable");
     var field = [];
@@ -15,13 +15,25 @@ function gameState() {
             field.push(col.id);
         }
     }
-    console.log("I clicked");
-    test = 1;
 
+    console.log("I clicked");
+    socket.onopen = function(){
+    socket.send("klikkkk!");
+    }
 
 };
-if (test == 1) {
-    socket.onopen = function () {
-        socket.send("something!");
-    }
-}
+
+(function setup(){
+    var socket = new WebSocket("ws://localhost:3000");
+
+    
+
+    socket.onmessage = function(event){
+        console.log(event.data);
+    };
+
+    socket.onopen = function(){
+        socket.send("connected");
+        gameState(socket);
+    };
+})();

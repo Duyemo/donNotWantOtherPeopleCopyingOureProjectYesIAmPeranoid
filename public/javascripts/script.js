@@ -1,9 +1,10 @@
 function fire(elem) {
-    var shipStat = 0;
+    var shipStat = 1;
     // if there is a ship it will be a hit, otherwise it will be a miss
-    if (shipStat == 1) {
+    if (shipStat == 1 && elem.style.backgroundColor != "#00FF00" ) {
         hit();
         elem.style.backgroundColor = "#00FF00";
+        console.log(elem.style.backgroundColor);
 
     } else {
         mis();

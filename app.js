@@ -32,9 +32,11 @@ const wss = new websocket.Server({ server });
 wss.on("connection", function(ws) {
     // push the new client to the clients array
     queue.push(ws);
+
     ws.send("connected to server ");
+
     ws.on("message", function incoming(message) {
-        console.log(message);
+        console.log('received: %s', message);
       
     });
     
@@ -43,11 +45,8 @@ wss.on("connection", function(ws) {
 
 // prints the amount of connected clients.
 wss.on('connection', (ws) => {
-    ws.on('message', (m) => {
-        console.log('received: %s', m);
-    });
-
-    console.log(wss.clients.size);
+    console.log(wss.clients);
+    console.log("the client size is :", wss.clients.size);
     
 });
 
@@ -58,13 +57,14 @@ if(queue.length >= 2){
     var playerTwo = queue.shift();9
     
     var game = new Game(playerOne, playerTwo, 1);
-    game.getPlayerOne().send("you connected to a player");
+    game.getPlayerOne().send("you connected to a player 1");
     game.getPlayerTwo().send("you connected to a player");
+    console.log(game.getPlayerTwo());
 
     
 
     gameList.push(game);
-    console.log(gameList.length);
+    console.log("the gamelist length is:", gameList.length);
    
 }
 });
