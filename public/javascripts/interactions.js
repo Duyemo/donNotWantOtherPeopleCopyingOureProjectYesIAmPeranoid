@@ -1,9 +1,9 @@
 // changes the game state
 // 0 is before the game
 // 1 is when playing
-
+var socket = new WebSocket("ws://localhost:3000");
 function gameState() {
-    var socket = new WebSocket("ws://localhost:3000");
+    
 
     var table = document.getElementById("playerTable");
     var field = [];
@@ -17,14 +17,16 @@ function gameState() {
     }
 
     console.log("I clicked");
+    
     socket.onopen = function(){
     socket.send("klikkkk!");
+    console.log("test");    
     }
 
 };
 
 (function setup(){
-    var socket = new WebSocket("ws://localhost:3000");
+    //var socket = new WebSocket("ws://localhost:3000");
 
     
 

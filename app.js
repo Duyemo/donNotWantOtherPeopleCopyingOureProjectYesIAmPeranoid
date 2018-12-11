@@ -59,7 +59,7 @@ if(queue.length >= 2){
     var game = new Game(playerOne, playerTwo, 1);
     game.getPlayerOne().send("you connected to a player 1");
     game.getPlayerTwo().send("you connected to a player");
-    console.log(game.getPlayerTwo());
+   
 
     
 
