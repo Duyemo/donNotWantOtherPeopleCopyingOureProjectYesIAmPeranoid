@@ -15,13 +15,10 @@ function gameState() {
             field.push(col.id);
         }
     }
-
-    console.log("I clicked");
     
-    socket.onopen = function(){
     socket.send("klikkkk!");
-    console.log("test");    
-    }
+        
+    
 
 };
 
@@ -36,6 +33,14 @@ function gameState() {
 
     socket.onopen = function(){
         socket.send("connected");
-        gameState(socket);
+        start();
     };
 })();
+
+function start(){
+    document.getElementById("gameChanger").addEventListener("click", gameState);
+
+    
+
+}
+

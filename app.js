@@ -45,7 +45,7 @@ wss.on("connection", function(ws) {
 
 // prints the amount of connected clients.
 wss.on('connection', (ws) => {
-    console.log(wss.clients);
+    
     console.log("the client size is :", wss.clients.size);
     
 });
