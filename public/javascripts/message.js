@@ -33,5 +33,9 @@ exports.S_SHOT_FIRED = JSON.stringify(exports.O_SHOT_FIRED);
 
 /* server to player: miss */
 
+// for the stats:
+/* server to client: another player came online */
+
+
 //if the exports is undefined, we are on the client, else the server 
 } (typeof exports === "undefined" ? this.Messages = {} : exports));

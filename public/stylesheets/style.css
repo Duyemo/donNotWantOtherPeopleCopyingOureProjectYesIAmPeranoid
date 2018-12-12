@@ -269,13 +269,13 @@ li a {
  }
  
  .numberOfOngoingGames::after{
-  content: "games are currently playing";
+  content: " games are currently playing";
  }
  .onlinePlayers::after{
-   content: "players are online";
+   content: " players are online";
  }
  .gamesPlayed::after{
-  content: "games have been played";
+  content: " games have been played";
 }
 .Made::before{
   content: "Made";
