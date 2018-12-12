@@ -10,6 +10,7 @@ var app = express();
 var Game = require("./game");
 var gameList = [];
 
+var gameStat = require("./public/javascripts/stats");
 var Message = require("./public/javascripts/message");
 
 // make client array
@@ -31,11 +32,15 @@ const wss = new websocket.Server({ server });
 // make a game
 var currentGame = new Game();
 
+
+
 // if connected, sends connected to server. And print to console log messages from server
 wss.on("connection", function(ws) {
 
     // push the new client to the clients array
     queue.push(ws);
+    gameStat.playersOnline++;
+    console.log("Players online:", gameStat.playersOnline);
 
     
     ws.send(Message.S_CONNECTED);
@@ -90,6 +95,9 @@ if(queue.length >= 2){
     
 
     gameList.push(currentGame);
+    gameStat.gamesOnline++;
+    
+    console.log("Amount of games online:", gameStat.gamesOnline);
     console.log("the gamelist length is:", gameList.length);
    
 }
