@@ -178,6 +178,12 @@ li a {
   border: none;
  }
 
+ /* error message */
+ #errorMessage{
+   position: absolute;
+   bottom: 30%;
+   left: 690px
+ }
  
  #gameChanger{
    width: 10%;

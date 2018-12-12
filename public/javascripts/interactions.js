@@ -4,7 +4,7 @@ var whichPlayer = "none";
 var yourTurn = false;
 
 function gameState() {
-    
+    var counter  = 0;
 
     var table = document.getElementById("playerTable");
     var field = [];
@@ -13,14 +13,24 @@ function gameState() {
         //iterate through columns
         for (var j = 0, col; col = row.cells[j]; j++) {
             //gets if it contains a ship, then pushes it to the array
+            if(col.id == "contains"){
+                counter = counter + 1;
+            }
+            
             field.push(col.id);
         }
     }
+    // when we moved all the boats to the field we can move one else we get error message
+    if(counter == 21){    
     console.log("you are ready");
     socket.send(Messages.S_PLAYER_READY);
         
     
     document.getElementById("gameChanger").removeEventListener("click", gameState);
+    }  else {
+        console.log("please move all your boats to the field");
+        document.getElementById("errorMessage").innerHTML = "Please move all your boats to the field.";
+    }
 };
 
 (function setup(){    
