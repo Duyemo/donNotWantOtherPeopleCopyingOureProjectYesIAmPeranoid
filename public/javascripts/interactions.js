@@ -40,11 +40,13 @@ function gameState() {
     socket.onmessage = function (event) {
         console.log(event.data);
         let inMSg = JSON.parse(event.data);
+        
 
         if (inMSg.type == "PLAYER_ONE") {
             console.log("You are player one");
             whichPlayer = "Player one";
             yourTurn = true;
+            
         }
 
         if (inMSg.type == "PLAYER_TWO") {
@@ -59,9 +61,20 @@ function gameState() {
             document.getElementById("errorMessage").innerHTML = "";
         }
 
-        document.getElementById("gamesOnline").innerHTML = gameStats.gamesOnline;
-        document.getElementById("playersOnline").innerHTML = gameStats.playersOnline;
-        document.getElementById("gamesPlayed").innerHTML = gameStats.gamesPlayed;
+        if(inMSg.type == "NEW_PLAYER"){
+            console.log("new player");
+            gameStats.playersOnline++;
+            updateStats();
+        }
+
+        if(inMSg == "NEW_GAME"){
+            console.log("new game");
+            gameStats.gamesOnline++;
+            gameStats.gamesPlayed++;
+            updateStats();
+        }
+
+        
         
     };
 

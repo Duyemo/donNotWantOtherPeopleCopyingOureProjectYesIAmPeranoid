@@ -34,7 +34,13 @@ exports.S_SHOT_FIRED = JSON.stringify(exports.O_SHOT_FIRED);
 /* server to player: miss */
 
 // for the stats:
-/* server to client: another player came online */
+/* server to client: new player */
+exports.O_NEW_PLAYER = {type: "NEW_PLAYER"};
+exports.S_NEW_PLAYER = JSON.stringify(exports.O_NEW_PLAYER);
+
+/* server to client: new game */
+exports.O_NEW_GAME = {type: "NEW_GAME"};
+exports.S_NEW_GAME = JSON.stringify(exports.O_NEW_GAME);
 
 
 //if the exports is undefined, we are on the client, else the server 

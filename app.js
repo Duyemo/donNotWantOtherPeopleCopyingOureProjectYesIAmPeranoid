@@ -15,6 +15,7 @@ var Message = require("./public/javascripts/message");
 
 // make client array
 queue = [];
+CLIENTS = [];
 
 
 
@@ -39,6 +40,10 @@ wss.on("connection", function(ws) {
 
     // push the new client to the clients array
     queue.push(ws);
+    CLIENTS.push(ws);
+
+    sendAll(Message.S_NEW_PLAYER);
+
     gameStat.playersOnline++;
     console.log("Players online:", gameStat.playersOnline);
 
@@ -95,6 +100,10 @@ if(queue.length >= 2){
     
 
     gameList.push(currentGame);
+    sendAll(Message.S_NEW_GAME);
+
+    
+
     gameStat.gamesOnline++;
     
     console.log("Amount of games online:", gameStat.gamesOnline);
@@ -103,7 +112,12 @@ if(queue.length >= 2){
 }
 });
 
-
+// to do write a send all function
+function sendAll(message){
+    for(var i = 0; i <CLIENTS.length; i++){
+        CLIENTS[i].send(message);
+    }
+}
 
 // listens to port 3000
 server.listen(port);

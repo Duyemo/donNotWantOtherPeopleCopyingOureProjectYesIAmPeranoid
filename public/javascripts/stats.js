@@ -6,6 +6,6 @@ var gameStats = {
     gamesPlayed: 0   
 
 }
-
+// not defined but why?
 module.exports = gameStats;
 
