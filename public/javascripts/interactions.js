@@ -23,6 +23,7 @@ function gameState() {
     // when we moved all the boats to the field we can move one else we get error message
     if(counter == 21){    
     console.log("you are ready");
+    document.getElementById("errorMessage").innerHTML = "You are ready... but we have to wait on our slow opponent"
     socket.send(Messages.S_PLAYER_READY);
         
     
