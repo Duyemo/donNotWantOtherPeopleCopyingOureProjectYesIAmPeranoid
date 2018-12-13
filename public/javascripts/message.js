@@ -42,12 +42,18 @@ exports.S_NEW_PLAYER = JSON.stringify(exports.O_NEW_PLAYER);
 exports.O_NEW_GAME = {type: "NEW_GAME"};
 exports.S_NEW_GAME = JSON.stringify(exports.O_NEW_GAME);
 
-/*client to server: this is my field */
+/*client to server to client: this is my field */
 exports.T_FIELD = "FIELD";
 exports.O_FIELD = { type: exports.T_FIELD,
-    data: null
+    data: null,
+    player: null
 };
 
+/* client to server to client: its your turn */
+exports.T_YOUR_TURN = "YOUR_TURN";
+exports.O_YOUR_TURN = { type: exports.T_YOUR_TURN,
+player: null
+};
 
 //if the exports is undefined, we are on the client, else the server 
 } (typeof exports === "undefined" ? this.Messages = {} : exports));

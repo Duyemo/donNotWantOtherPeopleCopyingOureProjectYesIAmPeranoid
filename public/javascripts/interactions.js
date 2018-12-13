@@ -3,6 +3,8 @@ var socket = new WebSocket("ws://localhost:3000");
 var whichPlayer = "none";
 var yourTurn = false;
 
+var opponentsField = [];
+
 function gameState() {
     var counter = 0;
 
@@ -26,10 +28,12 @@ function gameState() {
         console.log("you are ready");
         document.getElementById("errorMessage").innerHTML = "You are ready... but we have to wait on our slow opponent"
        
-        console.log(field);
+        // console.log(field);
 
         let msg = Messages.O_FIELD;
-        msg.data = field
+        msg.data = field;
+        msg.player = whichPlayer;
+        
         socket.send(JSON.stringify(msg));
 
         socket.send(Messages.S_PLAYER_READY);
@@ -81,7 +85,14 @@ function gameState() {
             updateStats();
         }
 
-        
+        if(inMSg.type == "FIELD"){
+            opponentsField = inMSg.data;
+        }
+
+        if(inMSg.type == "YOUR_TURN"){
+            yourTurn = true;
+            console.log("my turn now");
+        }
         
     };
 

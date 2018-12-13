@@ -71,6 +71,22 @@ wss.on("connection", function(ws) {
            currentGame.getPlayerTwo().send(Message.S_BOTH_READY);
        }
 
+       if(inMSG.type == "FIELD" && inMSG.player == "Player one"){
+           currentGame.getPlayerTwo().send(JSON.stringify(inMSG));
+       }
+
+       if(inMSG.type == "FIELD" && inMSG.player == "Player two"){
+           currentGame.getPlayerOne().send(JSON.stringify(inMSG));
+       }
+
+       if(inMSG.type == "YOUR_TURN" && inMSG.player == "Player one"){
+           currentGame.getPlayerTwo().send(JSON.stringify(inMSG));
+       }
+
+       if(inMSG.type == "YOUR_TURN" && inMSG.player == "Player two"){
+           currentGame.getPlayerOne().send(JSON.stringify(inMSG));
+       }
+
       
     });
     
