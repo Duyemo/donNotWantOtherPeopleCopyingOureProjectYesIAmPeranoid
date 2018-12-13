@@ -46,6 +46,15 @@ button:hover{
   cursor: pointer;
 }
 
+#inGameTimer{
+  position: absolute;
+  left: 610px;
+  top: 200px;
+  width: 20%;
+  text-align: center;
+  font-size: 25px;
+  color: crimson;
+}
 
 
 #hit{
@@ -304,3 +313,4 @@ li a {
   0%   {left:1500px; top:90px;}
   100%  {left:-700px; top:90px;}
 }
+
