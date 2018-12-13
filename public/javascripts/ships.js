@@ -467,7 +467,6 @@ $(document).ready(placeShipInTable);
 
 
 
-
 /*
   var turnShip = function () {
  "use strict";
