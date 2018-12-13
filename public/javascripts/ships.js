@@ -14,7 +14,6 @@ var registerClickOnShip = function () {
   //Get the ship ellements
   var ship1 = document.getElementById("ship1");
   var ship2 = document.getElementById("ship2");
-  var ship3 = document.getElementById("ship3");
   var doubleShip1 = document.getElementById("doubleShip1");
   var doubleShip2 = document.getElementById("doubleShip2");
   var tripleShip1 = document.getElementById("tripleShip1"); 
@@ -25,7 +24,6 @@ var registerClickOnShip = function () {
   //creats the eventlisteners for the ships
   ship1.addEventListener("mousedown", initialClick, false);
   ship2.addEventListener("mousedown", initialClick, false);
-  ship3.addEventListener("mousedown", initialClick, false);
   doubleShip1.addEventListener("mousedown", initialClick, false);
   doubleShip2.addEventListener("mousedown", initialClick, false);
   tripleShip1.addEventListener("mousedown", initialClick, false);
