@@ -23,6 +23,7 @@ function fire(elem) {
             else{hasSunk++;}
         }
     }
+    
 
     console.log(elem.id);
     console.log("id opponents field", opponentsField[12]);
@@ -35,7 +36,8 @@ function fire(elem) {
             elem.style.backgroundColor = "#00FF00";
             opponentsField[elem.id - 1] = "sunk";
             sunkOrNot(elem.id-1," ");
-            if(hasSunk > hasNotSunk){console.log("ship has sunk");}
+            if(hasSunk > hasNotSunk){console.log("ship has sunk");
+            }
             else{console.log("ship has NOOOOOOOT sunk");}
             hasSunk=0; 
             hasNotSunk=0;
