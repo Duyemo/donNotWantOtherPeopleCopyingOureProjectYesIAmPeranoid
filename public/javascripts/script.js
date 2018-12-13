@@ -1,6 +1,7 @@
 function fire(elem) {
     var shipStat = 1;
-
+    
+    //2 variables and a function used to check if a ship thats hit is sunk or not
     var hasSunk = 0;
     var hasNotSunk =0; 
     var sunkOrNot = function(elemID, previous){
@@ -34,6 +35,7 @@ function fire(elem) {
         if (opponentsField[elem.id - 1] == "contains" && (elem.style.backgroundColor != "rgb(0, 255, 0)" && elem.style.backgroundColor != "tomato")) {
             hit();
             elem.style.backgroundColor = "#00FF00";
+           //new code to check if the ship that's hit is sunk or not
             opponentsField[elem.id - 1] = "sunk";
             sunkOrNot(elem.id-1," ");
             if(hasSunk > hasNotSunk){console.log("ship has sunk");

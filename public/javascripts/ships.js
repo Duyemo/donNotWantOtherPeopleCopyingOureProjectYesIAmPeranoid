@@ -70,7 +70,7 @@ var registerClickOnShip = function () {
    //function that turns the selected ship
     document.addEventListener("keypress", function (event) {
       
-      // check if the button that is pressed is indead the spacebar
+      // check if the key that is pressed is indead the spacebar
     if(event.keyCode == 32){ 
     if(moving){
      
@@ -451,7 +451,6 @@ $(document).ready(registerClickOnShip);
           
 };
 $(document).ready(placeShipInTable);
-
 
 
 

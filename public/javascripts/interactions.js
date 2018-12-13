@@ -70,6 +70,18 @@ function gameState() {
             console.log("You are both ready");
             document.getElementById("OpponentsTextId").innerHTML = "Oppents ships";
             document.getElementById("errorMessage").innerHTML = "";
+
+        //function for the ingame timer here
+        var timer = function(){
+            var start = Date.now();
+            var inGameTimer = document.getElementById("inGameTimer")
+            setInterval(function(){
+              var timeInGame = Date.now() -start; //give time passed in ms
+              var timeInGameSeconds= (Math.floor(timeInGame / 1000)); // convertes time form ms to s and appends it to the screen
+              inGameTimer.innerHTML =timeInGameSeconds;
+            });
+          };
+          $(document).ready(timer);
         }
 
         if(inMSg.type == "NEW_PLAYER"){
