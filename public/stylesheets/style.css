@@ -165,11 +165,19 @@ li a {
   left: 75px;
   /* small but o so important extra line of css that make sure the table is always on the forground, befor everything so it can always be clicked */
   z-index: 1; 
+  background: #87d0fe;
+  border-collapse: collapse;
  }
+
+ th:hover {background-color: #3997d1;}
+
  main .OpponentTable{
  position: absolute;
  bottom: 100px;
- left: 975px 
+ left: 975px ;
+ background: #87d0fe;
+ border-collapse: collapse;
+ 
  }
  
  thead{
