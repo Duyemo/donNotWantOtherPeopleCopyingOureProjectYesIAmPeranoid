@@ -36,7 +36,7 @@ var registerClickOnShip = function () {
   function move(e){
   
   //creats the variables that are equal to the mouse cordinates -10   
-  var newX = e.clientX - 10;
+  var newX = e.clientX  - 10;
   var newY = e.clientY - 10;
   
   //maps the value of the position of an image object to the mouse
@@ -189,6 +189,7 @@ $(document).ready(registerClickOnShip);
         //give image the just source-code and place it in the cell. 
         img.src = imageSrc;
         cell.appendChild(img);
+        //cell.style.background = " #ffffff src(imageSrc) no-repeat right";
        
         
         //set the id of the cell to "contains" to mark that the cell contains a ship 
