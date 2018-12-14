@@ -62,7 +62,7 @@ function fire(elem) {
         
         }
         if (opponentsField[elem.id - 1] != "contains" && (elem.style.backgroundColor != "tomato" && elem.style.backgroundColor != "rgb(0, 255, 0)")) {
-            mis(elem);
+            mis(elem.id);
             elem.style.backgroundColor = "tomato";
 
             yourTurn = false;
@@ -87,17 +87,26 @@ function hit(input) {
     //send hit message to other player
     let msg = Messages.O_HIT;
     msg.player = whichPlayer;
-    position = input;
+    msg.position = input;
 
+    console.log(msg);
     socket.send(JSON.stringify(msg));
     //document.images["hit"].src = "images/stillhit.png";
 
 
 }
 
-function mis(elem) {
+function mis(input) {
     // change image
     document.images["mis"].src = "images/mis.gif";
+
+    //send mis message to other player
+    let msg = Messages.O_MIS;
+    msg.player = whichPlayer;
+    msg.position = input;
+
+    console.log(msg);
+    socket.send(JSON.stringify(msg));
 
 }
 

@@ -73,37 +73,15 @@ wss.on("connection", function(ws) {
            currentGame.nextGameStatus();
        }
 
-       if(inMSG.type == "FIELD" && inMSG.player == "Player one"){
+       if(inMSG.player == "Player one"){
            currentGame.getPlayerTwo().send(JSON.stringify(inMSG));
        }
 
-       if(inMSG.type == "FIELD" && inMSG.player == "Player two"){
+       if(inMSG.player == "Player two"){
            currentGame.getPlayerOne().send(JSON.stringify(inMSG));
        }
 
-       if(inMSG.type == "YOUR_TURN" && inMSG.player == "Player one"){
-           currentGame.getPlayerTwo().send(JSON.stringify(inMSG));
-       }
-
-       if(inMSG.type == "YOUR_TURN" && inMSG.player == "Player two"){
-           currentGame.getPlayerOne().send(JSON.stringify(inMSG));
-       }
-
-       if(inMSG.type = "SHIP_SUNK" && inMSG.player == "Player one"){
-           currentGame.getPlayerTwo().send(JSON.stringify(inMSG));
-           console.log("sunk");
-       }
-       if(inMSG.type == "SHIP_SUNK" && inMSG.player == "Player two"){
-           currentGame.getPlayerOne().send(JSON.stringify(inMSg));
-           console.log("sunk");
-       }
-
-       if(inMSG.type == "HIT" && inMSG.player == "Player one"){
-           currentGame.getPlayerTwo().send(JSON.stringify(inMSG));
-       }
-       if(inMSG == "MIS" && inMSG.player == "Player two"){
-           currentGame.getPlayerOne().send(JSON.stringify(inMSG));
-       }
+    
 
       
     });

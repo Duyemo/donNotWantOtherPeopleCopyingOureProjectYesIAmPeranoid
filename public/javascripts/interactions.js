@@ -51,7 +51,7 @@ function gameState() {
 
     // if we have an incomming message we put it in the console
     socket.onmessage = function (event) {
-        console.log(event.data);
+        console.log("you revieced this",event.data);
         let inMSg = JSON.parse(event.data);
         
 
@@ -111,7 +111,13 @@ function gameState() {
             document.getElementById("errorMessage").innerHTML = "sunk";
         }
         if(inMSg.type == "HIT"){
-            document.getElementById(field[inMSg.position -1]).style.backgroundColor = "#000000";
+            console.log("the position", inMSg.position);
+            console.log(field[inMSg.position - 1]);
+            console.log(document.getElementsByClassName("pizza"));
+            document.getElementsByClassName(inMSg.position)[0].style.backgroundColor = "tomato";
+        }
+        if(inMSg.type == "MIS"){
+            document.getElementsByClassName(inMSg.position)[0].style.backgroundColor = "#3997d1";
         }
         
     };
