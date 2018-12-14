@@ -3,7 +3,11 @@
 exports.O_CONNECTED = {type: "CONNECTED"};
 exports.S_CONNECTED = JSON.stringify(exports.O_CONNECTED);
 
-/* client to server: game is over, the winner is: */
+/* client to server: I won */
+exports.T_WINNER = "WINNER";
+exports.O_WINNER = {type: exports.T_WINNER,
+player: null
+};
 
 /*  Server to client: abort the game the other one left */
 exports.O_GAME_ABORTED = {type: "GAME-ABORTED"};
@@ -29,9 +33,7 @@ exports.S_PLAYER_TWO = JSON.stringify(exports.O_PLAYER_TWO);
 exports.O_SHOT_FIRED = {type: "SHOT_FIRED"};
 exports.S_SHOT_FIRED = JSON.stringify(exports.O_SHOT_FIRED);
 
-/* server to player: hit */
 
-/* server to player: miss */
 
 // for the stats:
 /* server to client: new player */
@@ -59,21 +61,21 @@ player: null
 exports.T_SHIP_SUNK = "SHIP_SUNK";
 exports.O_SHIP_SUNK = {type: exports.T_SHIP_SUNK,
 player: null
-}
+};
 
 /* client to server to client: hit */
 exports.T_HIT = "HIT";
 exports.O_HIT = {type: exports.T_HIT,
 player: null,
 position: null
-}
+};
 
 /* client to server to client: mis */
 exports.T_MIS = "MIS";
 exports.O_MIS = {type: exports.T_MIS,
 player: null,
 position: null
-}
+};
 
 
 //if the exports is undefined, we are on the client, else the server 

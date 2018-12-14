@@ -119,6 +119,10 @@ function gameState() {
         if(inMSg.type == "MIS"){
             document.getElementsByClassName(inMSg.position)[0].style.backgroundColor = "#3997d1";
         }
+        if(inMSg.type == "WINNER"){
+            document.getElementById("errorMessage").innerHTML = "oh no, you lost ;(";
+            // end the game
+        }
         
     };
 

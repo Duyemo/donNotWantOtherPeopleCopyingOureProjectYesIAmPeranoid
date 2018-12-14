@@ -1,9 +1,10 @@
+var numberOfSHipsSunk = 0; 
 function fire(elem) {
     
     //2 variables and a function used to check if a ship thats hit is sunk or not
     var hasSunk = 0;
     var hasNotSunk = 0;
-    var numberOfSHipsSunk = 0; 
+    
     var sunkOrNot = function(elemID, previous){
       
         if (opponentsField[elemID + 1] == "contains"||
@@ -53,6 +54,7 @@ function fire(elem) {
                 document.getElementById("errorMessage").innerHTML = "You let the ship sink";
 
                 numberOfSHipsSunk++;
+                console.log(numberOfSHipsSunk);
             }
             else{console.log("ship has NOT sunk");}
             hasSunk=0; 
@@ -60,6 +62,9 @@ function fire(elem) {
             if(numberOfSHipsSunk == 8){
                console.log("you won");
                document.getElementById("errorMessage").innerHTML = "You won!";
+               let msg = Messages.O_WINNER;
+               msg.player = whichPlayer;
+               socket.send(JSON.stringify(msg));
             }
         }
         // if there is no boat you mis
