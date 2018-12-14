@@ -78,7 +78,7 @@ function gameState() {
             setInterval(function(){
               var timeInGame = Date.now() -start; //give time passed in ms
               var timeInGameSeconds= (Math.floor(timeInGame / 1000)); // convertes time form ms to s 
-              inGameTimer.innerHTML ="Time spend in this game is: \n \n" + timeInGameSeconds +"seconds";
+              inGameTimer.innerHTML ="Time spend in this game is: \n \n" + timeInGameSeconds +" seconds";
             });
           };
           $(document).ready(timer);
