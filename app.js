@@ -67,8 +67,10 @@ wss.on("connection", function(ws) {
         }
 
        if(currentGame.getGameStatus() == 2){
+           console.log("hey there");
            currentGame.getPlayerOne().send(Message.S_BOTH_READY);
            currentGame.getPlayerTwo().send(Message.S_BOTH_READY);
+           currentGame.nextGameStatus();
        }
 
        if(inMSG.type == "FIELD" && inMSG.player == "Player one"){
@@ -85,6 +87,13 @@ wss.on("connection", function(ws) {
 
        if(inMSG.type == "YOUR_TURN" && inMSG.player == "Player two"){
            currentGame.getPlayerOne().send(JSON.stringify(inMSG));
+       }
+
+       if(inMSG.type = "SHIP_SUNK" && inMSG.player == "Player one"){
+           currentGame.getPlayerTwo().send(JSON.stringify(inMSG));
+       }
+       if(inMSG.type == "SHIP_SUNK" && inMSG.player == "Player two"){
+           currentGame.getPlayerOne().send(JSON.stringify(inMSg));
        }
 
       

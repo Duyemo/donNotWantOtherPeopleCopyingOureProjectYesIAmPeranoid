@@ -37,6 +37,7 @@ function gameState() {
         socket.send(JSON.stringify(msg));
 
         socket.send(Messages.S_PLAYER_READY);
+        
 
         document.getElementById("gameChanger").removeEventListener("click", gameState);
     } else {

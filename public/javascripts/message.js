@@ -55,5 +55,11 @@ exports.O_YOUR_TURN = { type: exports.T_YOUR_TURN,
 player: null
 };
 
+/* client to server to client: you ship sunk */
+exports.T_SHIP_SUNK = "SHIP_SUNK";
+exports.O_SHIP_SUNK = {type: exports.T_SHIP_SUNK,
+player: null
+}
+
 //if the exports is undefined, we are on the client, else the server 
 } (typeof exports === "undefined" ? this.Messages = {} : exports));

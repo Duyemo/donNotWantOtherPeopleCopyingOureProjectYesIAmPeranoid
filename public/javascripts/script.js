@@ -41,9 +41,13 @@ function fire(elem) {
             sunkOrNot(elem.id-1," ");
             if(hasSunk > hasNotSunk){
                 console.log("ship has sunk");
+
+                let msg = Messages.O_SHIP_SUNK;
+                msg.player = whichPlayer;
+
                 numberOfSHipsSunk++;
             }
-            else{console.log("ship has NOOOOOOOT sunk");}
+            else{console.log("ship has NOT sunk");}
             hasSunk=0; 
             hasNotSunk=0;
             if(numberOfSHipsSunk == 8){
