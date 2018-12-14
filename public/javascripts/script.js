@@ -26,7 +26,7 @@ function fire(elem) {
         }
     }
     
-
+    // debug zooi
     console.log("elem.id", elem.id);
     console.log("id opponents field", opponentsField[12]);
     console.log("does it contains?", opponentsField[elem.id - 1] == "contains");
@@ -38,7 +38,6 @@ function fire(elem) {
             
             hit(elem.id);
             elem.style.backgroundColor = "#00FF00";
-
            //new code to check if the ship that's hit is sunk or not
             opponentsField[elem.id - 1] = "sunk";
             sunkOrNot(elem.id-1," ");
@@ -49,6 +48,8 @@ function fire(elem) {
                 msg.player = whichPlayer;
 
                 socket.send(JSON.stringify(msg));
+
+                document.getElementById("errorMessage").innerHTML = "You let the ship sink";
 
                 numberOfSHipsSunk++;
             }
@@ -91,7 +92,9 @@ function hit(input) {
 
     console.log(msg);
     socket.send(JSON.stringify(msg));
-    //document.images["hit"].src = "images/stillhit.png";
+   
+
+    
 
 
 }

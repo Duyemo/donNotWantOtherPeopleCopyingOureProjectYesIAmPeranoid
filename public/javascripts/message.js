@@ -74,5 +74,7 @@ exports.O_MIS = {type: exports.T_MIS,
 player: null,
 position: null
 }
+
+
 //if the exports is undefined, we are on the client, else the server 
 } (typeof exports === "undefined" ? this.Messages = {} : exports));

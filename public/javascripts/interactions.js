@@ -108,7 +108,7 @@ function gameState() {
 
         if(inMSg.type == "SHIP_SUNK"){
             console.log("it sunk");
-            document.getElementById("errorMessage").innerHTML = "sunk";
+            document.getElementById("errorMessage").innerHTML = "Your ship sunk";
         }
         if(inMSg.type == "HIT"){
             console.log("the position", inMSg.position);
