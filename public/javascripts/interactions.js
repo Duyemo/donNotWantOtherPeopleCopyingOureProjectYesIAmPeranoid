@@ -4,12 +4,13 @@ var whichPlayer = "none";
 var yourTurn = false;
 
 var opponentsField = [];
+var field = [];
 
 function gameState() {
     var counter = 0;
 
     var table = document.getElementById("playerTable");
-    var field = [];
+    
     //iterate through rows
     for (var i = 0, row; row = table.rows[i]; i++) {
         //iterate through columns
@@ -108,6 +109,9 @@ function gameState() {
         if(inMSg.type == "SHIP_SUNK"){
             console.log("it sunk");
             document.getElementById("errorMessage").innerHTML = "sunk";
+        }
+        if(inMSg.type == "HIT"){
+            document.getElementById(field[inMSg.position -1]).style.backgroundColor = "#000000";
         }
         
     };

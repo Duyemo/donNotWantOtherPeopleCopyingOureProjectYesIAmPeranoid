@@ -95,7 +95,14 @@ wss.on("connection", function(ws) {
        }
        if(inMSG.type == "SHIP_SUNK" && inMSG.player == "Player two"){
            currentGame.getPlayerOne().send(JSON.stringify(inMSg));
-           consolelog("sunk");
+           console.log("sunk");
+       }
+
+       if(inMSG.type == "HIT" && inMSG.player == "Player one"){
+           currentGame.getPlayerTwo().send(JSON.stringify(inMSG));
+       }
+       if(inMSG == "MIS" && inMSG.player == "Player two"){
+           currentGame.getPlayerOne().send(JSON.stringify(inMSG));
        }
 
       

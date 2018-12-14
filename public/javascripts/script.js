@@ -27,14 +27,16 @@ function fire(elem) {
     }
     
 
-    console.log(elem.id);
+    console.log("elem.id", elem.id);
     console.log("id opponents field", opponentsField[12]);
-    console.log(opponentsField[elem.id - 1] == "contains");
+    console.log("does it contains?", opponentsField[elem.id - 1] == "contains");
 
     // if there is a ship it will be a hit, otherwise it will be a miss
     if (yourTurn) {
         if (opponentsField[elem.id - 1] == "contains" && (elem.style.backgroundColor != "rgb(0, 255, 0)" && elem.style.backgroundColor != "tomato")) {
-            hit();
+            console.log("elem.id", elem.id);
+            
+            hit(elem.id);
             elem.style.backgroundColor = "#00FF00";
 
            //new code to check if the ship that's hit is sunk or not
@@ -60,7 +62,7 @@ function fire(elem) {
         
         }
         if (opponentsField[elem.id - 1] != "contains" && (elem.style.backgroundColor != "tomato" && elem.style.backgroundColor != "rgb(0, 255, 0)")) {
-            mis();
+            mis(elem);
             elem.style.backgroundColor = "tomato";
 
             yourTurn = false;
@@ -77,16 +79,23 @@ function fire(elem) {
     }
 }
 
-function hit() {
+function hit(input) {
     // change image
     document.images["hit"].src = "images/hit.gif";
 
+    console.log("input", input);
+    //send hit message to other player
+    let msg = Messages.O_HIT;
+    msg.player = whichPlayer;
+    position = input;
+
+    socket.send(JSON.stringify(msg));
     //document.images["hit"].src = "images/stillhit.png";
 
 
 }
 
-function mis() {
+function mis(elem) {
     // change image
     document.images["mis"].src = "images/mis.gif";
 
