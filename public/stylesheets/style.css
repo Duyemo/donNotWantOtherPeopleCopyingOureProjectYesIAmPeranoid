@@ -364,10 +364,16 @@ li a {
 
 
 @keyframes planeAnimation {
-  0%   {left:1500px; top:-20px;}
+  0%  {left:1500px; top:-20px;}
   20% {top:-20px;}
-  30% {top: -70px;}
+  30% {top:-70px;}
   50% {top:-70px;}
   60% {top:-20px;}
-  100%  {left:-700px; top:-20px;}
+  100%{left:-700px; top:-20px;}
+}
+
+#uselessBoxModel{
+  margin: 5px;
+  padding: 5px;
+  border: none;
 }
