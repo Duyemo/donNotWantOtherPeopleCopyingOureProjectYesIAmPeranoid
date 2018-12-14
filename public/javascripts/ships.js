@@ -36,7 +36,7 @@ var registerClickOnShip = function () {
   function move(e){
   
   //creats the variables that are equal to the mouse cordinates -10   
-  var newX = e.clientX - 10;
+  var newX = e.clientX  - 10;
   var newY = e.clientY - 10;
   
   //maps the value of the position of an image object to the mouse
