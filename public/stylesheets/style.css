@@ -335,3 +335,12 @@ li a {
   100%  {left:-700px; top:90px;}
 }
 
+#header{
+  background: white;
+  transition: background  2s;
+  
+}
+#header:hover{
+ background: #000000;
+ 
+}
