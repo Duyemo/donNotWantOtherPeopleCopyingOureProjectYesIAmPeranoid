@@ -71,17 +71,15 @@ function gameState() {
             document.getElementById("OpponentsTextId").innerHTML = "Oppents ships";
             document.getElementById("errorMessage").innerHTML = "";
 
-        //function for the ingame timer here
-        var timer = function(){
-            var start = Date.now();
-            var inGameTimer = document.getElementById("inGameTimer")
+
+            const start = Date.now();
+            const inGameTimer = document.getElementById("inGameTimer");
             setInterval(function(){
               var timeInGame = Date.now() -start; //give time passed in ms
               var timeInGameSeconds= (Math.floor(timeInGame / 1000)); // convertes time form ms to s 
               inGameTimer.innerHTML ="Time spend in this game is: \n \n" + timeInGameSeconds +" seconds";
-            });
-          };
-          $(document).ready(timer);
+            },1000);
+         
         }
 
         if(inMSg.type == "NEW_PLAYER"){
