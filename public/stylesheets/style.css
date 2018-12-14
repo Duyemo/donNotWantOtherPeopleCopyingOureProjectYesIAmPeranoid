@@ -354,7 +354,7 @@ li a {
 
 #plane{
   width: 0px; 
-  z-index: 1;
+  z-index: -1;
   position: relative;
   animation-name: planeAnimation;
   animation-duration: 10s;
@@ -364,6 +364,10 @@ li a {
 
 
 @keyframes planeAnimation {
-  0%   {left:1500px; top:0px;}
-  100%  {left:-700px; top:0px;}
+  0%   {left:1500px; top:-20px;}
+  20% {top:-20px;}
+  30% {top: -70px;}
+  50% {top:-70px;}
+  60% {top:-20px;}
+  100%  {left:-700px; top:-20px;}
 }
