@@ -93,10 +93,8 @@ ul {
   margin: 0px;
   padding: 0;
   overflow: hidden;
-  font-size: 100%; 
-  
+  font-size: 100%;   
 }
-
 
 
 #madeBy{
@@ -143,8 +141,8 @@ li a {
   margin: 5px;
  }
  main .OpponentsText::before{
-   /* content: "Opponents";  */
-   color: blue;
+   content: "Waiting ";  
+   
  }
 
  /* the tables */
@@ -342,5 +340,30 @@ li a {
 }
 #header:hover{
  background: #000000;
- 
+}
+#titel{
+  background: white;
+  transition: background  2s;
+  
+}
+#titel:hover{
+ background: yellowgreen;
+}
+
+
+
+#plane{
+  width: 0px; 
+  z-index: 1;
+  position: relative;
+  animation-name: planeAnimation;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+
+@keyframes planeAnimation {
+  0%   {left:1500px; top:0px;}
+  100%  {left:-700px; top:0px;}
 }
