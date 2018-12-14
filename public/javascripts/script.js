@@ -1,10 +1,9 @@
 function fire(elem) {
-    var shipStat = 1;
     
     //2 variables and a function used to check if a ship thats hit is sunk or not
     var hasSunk = 0;
-    var hasNotSunk =0;
-    var numberOfSHipsSunk =0; 
+    var hasNotSunk = 0;
+    var numberOfSHipsSunk = 0; 
     var sunkOrNot = function(elemID, previous){
       
         if (opponentsField[elemID + 1] == "contains"||
@@ -32,23 +31,25 @@ function fire(elem) {
     console.log("does it contains?", opponentsField[elem.id - 1] == "contains");
 
     // if there is a ship it will be a hit, otherwise it will be a miss
-    if (yourTurn) {
+    if (yourTurn) { // first check if it is your turn, then check did you already shoot there? 
         if (opponentsField[elem.id - 1] == "contains" && (elem.style.backgroundColor != "rgb(0, 255, 0)" && elem.style.backgroundColor != "tomato")) {
             console.log("elem.id", elem.id);
             
             hit(elem.id);
             elem.style.backgroundColor = "#00FF00";
+
            //new code to check if the ship that's hit is sunk or not
             opponentsField[elem.id - 1] = "sunk";
             sunkOrNot(elem.id-1," ");
             if(hasSunk > hasNotSunk){
                 console.log("ship has sunk");
 
+                // send the message to the other player
                 let msg = Messages.O_SHIP_SUNK;
                 msg.player = whichPlayer;
-
                 socket.send(JSON.stringify(msg));
 
+                //message to the client
                 document.getElementById("errorMessage").innerHTML = "You let the ship sink";
 
                 numberOfSHipsSunk++;
@@ -58,23 +59,23 @@ function fire(elem) {
             hasNotSunk=0;
             if(numberOfSHipsSunk == 8){
                console.log("you won");
+               document.getElementById("errorMessage").innerHTML = "You won!";
             }
-            
-        
         }
+        // if there is no boat you mis
         if (opponentsField[elem.id - 1] != "contains" && (elem.style.backgroundColor != "tomato" && elem.style.backgroundColor != "rgb(0, 255, 0)")) {
             mis(elem.id);
             elem.style.backgroundColor = "tomato";
 
+            // send your turn message to the other player 
             yourTurn = false;
             let turns = Messages.O_YOUR_TURN;
             turns.player = whichPlayer;
-
-
             socket.send(JSON.stringify(turns));
         }
         
     } else {
+        //if you try to shoot but it is not your turn, you get an error message
         console.log("not your turn");
         document.getElementById("errorMessage").innerHTML = "Its not your turn";
     }
@@ -92,11 +93,6 @@ function hit(input) {
 
     console.log(msg);
     socket.send(JSON.stringify(msg));
-   
-
-    
-
-
 }
 
 function mis(input) {
@@ -110,7 +106,6 @@ function mis(input) {
 
     console.log(msg);
     socket.send(JSON.stringify(msg));
-
 }
 
 
