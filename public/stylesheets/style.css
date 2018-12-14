@@ -163,13 +163,13 @@ li a {
   position: absolute;
   bottom: 100px;
   left: 75px;
-  /*background: #87d0fe;*/
+  /*background: #87d0fe;*/ /* Background is it;s own object because it otherwise is placed ove rthe ships dragged into the table*/
   /* small but o so important extra line of css that make sure the table is always on the forground, befor everything so it can always be clicked */
   z-index: 1; 
   border-collapse: collapse;
  }
 
- /*th:hover {background-color: #3997d1;}*/
+ .OpponentTable th:hover {background-color: #3997d1;}
 
  main .OpponentTable{
  position: absolute;
