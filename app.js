@@ -67,7 +67,7 @@ wss.on("connection", function(ws) {
         }
 
        if(currentGame.getGameStatus() == 2){
-           console.log("hey there");
+           
            currentGame.getPlayerOne().send(Message.S_BOTH_READY);
            currentGame.getPlayerTwo().send(Message.S_BOTH_READY);
            currentGame.nextGameStatus();
@@ -91,9 +91,11 @@ wss.on("connection", function(ws) {
 
        if(inMSG.type = "SHIP_SUNK" && inMSG.player == "Player one"){
            currentGame.getPlayerTwo().send(JSON.stringify(inMSG));
+           console.log("sunk");
        }
        if(inMSG.type == "SHIP_SUNK" && inMSG.player == "Player two"){
            currentGame.getPlayerOne().send(JSON.stringify(inMSg));
+           consolelog("sunk");
        }
 
       

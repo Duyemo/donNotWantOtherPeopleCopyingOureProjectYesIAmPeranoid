@@ -104,6 +104,11 @@ function gameState() {
             yourTurn = true;
             console.log("my turn now");
         }
+
+        if(inMSg.type == "SHIP_SUNK"){
+            console.log("it sunk");
+            document.getElementById("errorMessage").innerHTML = "sunk";
+        }
         
     };
 

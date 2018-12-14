@@ -36,6 +36,7 @@ function fire(elem) {
         if (opponentsField[elem.id - 1] == "contains" && (elem.style.backgroundColor != "rgb(0, 255, 0)" && elem.style.backgroundColor != "tomato")) {
             hit();
             elem.style.backgroundColor = "#00FF00";
+
            //new code to check if the ship that's hit is sunk or not
             opponentsField[elem.id - 1] = "sunk";
             sunkOrNot(elem.id-1," ");
@@ -44,6 +45,8 @@ function fire(elem) {
 
                 let msg = Messages.O_SHIP_SUNK;
                 msg.player = whichPlayer;
+
+                socket.send(JSON.stringify(msg));
 
                 numberOfSHipsSunk++;
             }
