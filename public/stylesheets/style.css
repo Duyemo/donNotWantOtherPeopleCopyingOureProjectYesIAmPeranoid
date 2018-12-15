@@ -31,6 +31,14 @@ h1{
   
 }
 
+.howToPlay{
+  color: crimson;
+  text-align: center;
+  width: 30%;
+  margin: auto;
+  font-size: 16px;
+}
+
 
 
 button{
