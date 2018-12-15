@@ -1,3 +1,4 @@
+// require everything
 var express = require("express");
 var http = require("http");
 var indexRouter = require("./routes/index");
@@ -46,6 +47,7 @@ wss.on("connection", function(ws) {
 
     gameStat.playersOnline++;
     console.log("Players online:", gameStat.playersOnline);
+    console.log("url", ws.url);
 
     
     ws.send(Message.S_CONNECTED);
@@ -93,6 +95,7 @@ wss.on("connection", function(ws) {
 wss.on('connection', (ws) => {
     
     console.log("the client size is :", wss.clients.size);
+    console.log("ready state", ws.readyState);
     
 });
 
@@ -122,7 +125,15 @@ if(queue.length >= 2){
     console.log("the gamelist length is:", gameList.length);
    
 }
+
+
 });
+
+wss.on("close", function(code){
+    console.log("it closed");
+});
+
+
 
 // to do write a send all function
 function sendAll(message){
