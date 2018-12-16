@@ -7,10 +7,11 @@ function Players(name, field){
     
 }
 
-var Game = function(){
+var Game = function(gameID){
     this.playerOne = null;
     this.playerTwo = null;
     
+    this.gameIDID = gameID;
     this.gameStatus = 0;
 
     this.playerTwoReady = false;
