@@ -55,6 +55,7 @@ function fire(elem) {
                 // send the message to the other player
                 let msg = Messages.O_SHIP_SUNK;
                 msg.player = whichPlayer;
+                msg.opponent = yourOpponent;
                 socket.send(JSON.stringify(msg));
 
                 //message to the client
@@ -71,6 +72,7 @@ function fire(elem) {
                 document.getElementById("errorMessage").innerHTML = "You won!";
                 let msg = Messages.O_WINNER;
                 msg.player = whichPlayer;
+                msg.opponent = yourOpponent;
                 socket.send(JSON.stringify(msg));
             }
         }
@@ -87,6 +89,7 @@ function fire(elem) {
             yourTurn = false;
             let turns = Messages.O_YOUR_TURN;
             turns.player = whichPlayer;
+            turns.opponent = yourOpponent;
             socket.send(JSON.stringify(turns));
         }
 
@@ -106,6 +109,7 @@ function hit(input) {
     let msg = Messages.O_HIT;
     msg.player = whichPlayer;
     msg.position = input;
+    msg.opponent = yourOpponent;
 
     console.log(msg);
     socket.send(JSON.stringify(msg));
@@ -121,6 +125,7 @@ function mis(input) {
     let msg = Messages.O_MIS;
     msg.player = whichPlayer;
     msg.position = input;
+    msg.opponent = yourOpponent;
 
     console.log(msg);
     socket.send(JSON.stringify(msg));

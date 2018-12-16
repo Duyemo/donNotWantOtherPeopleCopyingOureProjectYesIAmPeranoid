@@ -3,6 +3,11 @@ var socket = new WebSocket("ws://localhost:3000");
 var whichPlayer = "none";
 var yourTurn = false;
 
+var yourOpponent = null;
+
+var ready = false;
+var opponentReady = false;
+
 var opponentsField = [];
 var field = [];
 var gameStats ={
@@ -45,10 +50,19 @@ function gameState() {
         let msg = Messages.O_FIELD;
         msg.data = field;
         msg.player = whichPlayer;
+        msg.opponent = yourOpponent;
+       
 
         socket.send(JSON.stringify(msg));
 
-        socket.send(Messages.S_PLAYER_READY);
+        let msgReady = Messages.O_READY;
+        msgReady.player = whichPlayer;
+        msgReady.opponent = yourOpponent;
+        msgReady.opponentReady = opponentReady;
+
+        socket.send(JSON.stringify(Messages.O_READY));
+
+        ready = true;
 
 
         document.getElementById("gameChanger").removeEventListener("click", gameState);
@@ -71,7 +85,10 @@ function gameState() {
         if (inMSg.type == "PLAYER_ONE") {
             console.log("You are player one");
             whichPlayer = "Player one";
+            yourOpponent = inMSg.opponent;
+            console.log("your opponent is", yourOpponent);
             
+        
 
         }
 
@@ -79,12 +96,17 @@ function gameState() {
             console.log("You are player two");
             whichPlayer = "Player two";
             yourTurn = false;
+            yourOpponent = inMSg.opponent
+            console.log("your opponent is", yourOpponent);
+            
+          
         }
 
         if (inMSg.type == "BOTH_READY") {
             console.log("You are both ready");
             document.getElementById("OpponentsTextId").innerHTML = "Oppents ships";
             document.getElementById("errorMessage").innerHTML = "";
+            console.log("we are both ready now");
             if(whichPlayer == "Player one"){
                 yourTurn = true;
             }
@@ -144,11 +166,43 @@ function gameState() {
             document.getElementById("errorMessage").innerHTML = "other person left the game, you will lose connection";
             socket.close();
         }
+        if(inMSg.type == "READY"){
+            opponentReady = true;
+            document.getElementById("errorMessage").innerHTML = "your opponent is ready";
+            if(ready == true){
+                console.log("we are ready");
+                let msg = Messages.O_BOTH_READY;
+                msg.player = whichPlayer;
+                msg.opponent = yourOpponent;
+
+                socket.send(JSON.stringify(msg));
+
+                console.log("You are both ready");
+            document.getElementById("OpponentsTextId").innerHTML = "Oppents ships";
+            document.getElementById("errorMessage").innerHTML = "";
+            console.log("we are both ready now");
+            if(whichPlayer == "Player one"){
+                yourTurn = true;
+            }
+
+
+            const start = Date.now();
+            const inGameTimer = document.getElementById("inGameTimer");
+            setInterval(function () {
+                var timeInGame = Date.now() - start; //give time passed in ms
+                var timeInGameSeconds = (Math.floor(timeInGame / 1000)); // convertes time form ms to s 
+                inGameTimer.innerHTML = "Time spend in this game is: \n \n" + timeInGameSeconds + " seconds";
+            }, 1000);
+
+            }
+
+        }
         
     };
 
     socket.onclose = function(){
         console.log("you left the game");
+        document.getElementById("errorMessage").innerHTML = "you are disconnected from the server";
     };
 
     // when we are open we start the whole game
@@ -177,6 +231,7 @@ function dropOut(){
     
     let msg = Messages.O_GAME_ABORTED;
     msg.player = whichPlayer;
+    msg.opponent = yourOpponent;
 
     socket.send(JSON.stringify(msg));
     socket.close();

@@ -16,6 +16,8 @@ var Game = function(){
     this.playerTwoReady = false;
     this.playerTwoReady = false;
 
+    this.gameID = null;
+
     this.getPlayerOne = function(){return this.playerOne;};
     this.getPlayerTwo = function(){return this.playerTwo;};
 
@@ -28,6 +30,9 @@ var Game = function(){
     this.isPlayerTwoReady = function(){return this.isPlayerTwoReady;};
 
     this.nextGameStatus = function(){this.gameStatus = this.gameStatus + 1;};
+
+    this.getP1GameID = function(){return this.gameID;};
+    this.getP2GameID = function(){return this.gameID;};
 }
 
 

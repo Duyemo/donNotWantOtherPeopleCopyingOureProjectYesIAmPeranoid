@@ -17,6 +17,7 @@ var Message = require("./public/javascripts/message");
 // make client array
 queue = [];
 CLIENTS = [];
+IDs = [];
 
 
 
@@ -33,6 +34,7 @@ const wss = new websocket.Server({ server });
 
 // make a game
 var currentGame = new Game();
+var connectionId = 0;
 
 
 
@@ -45,12 +47,19 @@ wss.on("connection", function (ws) {
     ws.on("message", function incoming(message) {
         console.log('received: %s', message);
         let inMSG = JSON.parse(message);
-       
+
         //only if we are connected with /play we make a new game
         if (inMSG.type == "CONNECTED") {
             // push the new client to the clients array
             queue.push(ws);
             CLIENTS.push(ws);
+            
+            gameID = connectionId;
+            console.log("connection id", connectionId);
+            
+            IDs.push(connectionId);
+            connectionId++;
+
 
             sendAll(Message.S_NEW_PLAYER);
 
@@ -62,11 +71,31 @@ wss.on("connection", function (ws) {
                 var playerOne = queue.shift();
                 var playerTwo = queue.shift();
 
+                var p1ID = IDs.shift();
+                var p2ID = IDs.shift();
+                
+
+                console.log("IDs", p1ID, p2ID);
+
                 currentGame.addPlayerOne(playerOne);
                 currentGame.addPlayerTwo(playerTwo);
 
-                currentGame.getPlayerOne().send(Message.S_PLAYER_ONE);
-                currentGame.getPlayerTwo().send(Message.S_PLAYER_TWO);
+                let p1msg = Message.O_PLAYER_ONE;
+                p1msg.gameID = gameID/2;
+                p1msg.opponent = p2ID;
+
+                console.log("opponent 2 ID", p1msg.opponent);
+                
+
+                let p2msg = Message.O_PLAYER_TWO;
+                p2msg.gameID = gameID/2;
+                p2msg.opponent = p1ID;
+                
+                console.log("opponent 1 ID", p2msg.opponent);
+
+
+                currentGame.getPlayerOne().send(JSON.stringify(p1msg));
+                currentGame.getPlayerTwo().send(JSON.stringify(p2msg));
 
                 gameList.push(currentGame);
                 sendAll(Message.S_NEW_GAME);
@@ -80,41 +109,43 @@ wss.on("connection", function (ws) {
 
 
 
-        if (inMSG.type == "PLAYER_READY") {
+        if (inMSG.type == "BOTH_READY") {
             // do stuff
-            console.log(currentGame.getGameStatus());
-            currentGame.nextGameStatus();
-            console.log(currentGame.getGameStatus());
+            CLIENTS[inMSG.opponent].send(JSON.stringify(inMSG));
+
+            if(inMSG == "Player one"){
+                CLIENTS[inMSG.opponent - 1].send(JSON.stringify(inMSG));
+            }
+            if(inMSG == "Player two"){
+                CLIENTS[inMSG.opponent + 1].send(JSON.stringify(inMSG));
+            }
         }
 
-        if (currentGame.getGameStatus() == 2) {
-
-            currentGame.getPlayerOne().send(Message.S_BOTH_READY);
-            currentGame.getPlayerTwo().send(Message.S_BOTH_READY);
-            currentGame.nextGameStatus();
-        }
+       
 
         if (inMSG.player == "Player one") {
-            currentGame.getPlayerTwo().send(JSON.stringify(inMSG));
+            console.log(inMSG.opponent);
+            CLIENTS[inMSG.opponent].send(JSON.stringify(inMSG));
+            
         }
 
         if (inMSG.player == "Player two") {
-            currentGame.getPlayerOne().send(JSON.stringify(inMSG));
+            CLIENTS[inMSG.opponent].send(JSON.stringify(inMSG));            
         }
     });
 
     ws.on("close", function (code) {
         console.log("it closed");
 
-        if(code == 1001){
-            try{
+        if (code == 1001) {
+            try {
                 currentGame.getPlayerOne().close();
-            } catch (e){
+            } catch (e) {
                 console.log(e);
             }
-            try{
+            try {
                 currentGame.getPlayerTwo().close();
-            } catch(e){
+            } catch (e) {
                 console.log(e);
             }
         }
