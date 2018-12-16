@@ -8,6 +8,7 @@ var field = [];
 
 // var sound = document.getElementById("sound");
 
+
 function gameState() {
     var counter = 0;
 
@@ -46,7 +47,8 @@ function gameState() {
     } else {
         console.log("please move all your boats to the field");
         document.getElementById("errorMessage").innerHTML = "Please move all your boats to the field.";
-
+        
+        
     }
 };
 
