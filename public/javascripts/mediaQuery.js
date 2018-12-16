@@ -1,11 +1,25 @@
-var testScreenSize = function (){
-var mql = window.matchMedia('(min-width: 1470px, min-height: 595px)'); //min width is absolute position of opponent table + it's width
-//min height is the absolute bposition of opponent table+ it's height. with this to requirmnts the game is 100%playable. although some thing will fal of screen
+//var testScreenSize = function (){
+var mql = window.matchMedia('(min-width: 1470px)'); //min width is absolute position of opponent table + it's width
+//var heightCheck = window.matchMedia('(min-height: 595px)');//min height is the absolute bposition of opponent table+ it's height. with this to requirmnts the game is 100%playable. although some thing will fal of screen
+//var sizeCheck= true;
 
-function screenTest(e) {
-  if (e.matches) {}
-  else {window.alert("screensize is to small! \n Your sceensize should be at least 1470x959px")}
-  mql.addListener(screenTest);
+function screenTestWidth(e) {
+  if (e.matches) {console.log("size is fine");}
+  else {console.log("problem");}
 }
+mql.addListener(screenTestWidth);
+
+/*
+function screenTestHeight(e){
+  if(e.matches) {console.log("hight is ok");}
+  else{sizeCheck = false;}
 }
-$(document).ready(testScreenSize);
+heightCheck.addListener(screenTestHeight);
+
+
+if(sizeCheck === false){
+    window.alert("Screensize is to small!!! \nYour sceensize should be at least 1470x959px");
+}*/
+
+//}
+//$(document).ready(testScreenSize);
