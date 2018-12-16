@@ -61,7 +61,7 @@ function gameState() {
         if (inMSg.type == "PLAYER_ONE") {
             console.log("You are player one");
             whichPlayer = "Player one";
-            yourTurn = true;
+            
 
         }
 
@@ -75,6 +75,9 @@ function gameState() {
             console.log("You are both ready");
             document.getElementById("OpponentsTextId").innerHTML = "Oppents ships";
             document.getElementById("errorMessage").innerHTML = "";
+            if(whichPlayer == "Player one"){
+                yourTurn = true;
+            }
 
 
             const start = Date.now();

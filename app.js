@@ -39,10 +39,6 @@ var currentGame = new Game();
 // if connected, sends connected to server. And print to console log messages from server
 wss.on("connection", function (ws) {
 
-
-
-
-
     ws.send(Message.S_CONNECTED);
 
     // for all the incomming messages
@@ -51,6 +47,7 @@ wss.on("connection", function (ws) {
         let inMSG = JSON.parse(message);
         console.log(inMSG);
 
+        //only if we are connected with /play we make a new game
         if (inMSG.type == "CONNECTED") {
             // push the new client to the clients array
             queue.push(ws);
@@ -72,21 +69,14 @@ wss.on("connection", function (ws) {
                 currentGame.getPlayerOne().send(Message.S_PLAYER_ONE);
                 currentGame.getPlayerTwo().send(Message.S_PLAYER_TWO);
 
-
-
-
                 gameList.push(currentGame);
                 sendAll(Message.S_NEW_GAME);
-
-
 
                 gameStat.gamesOnline++;
 
                 console.log("Amount of games online:", gameStat.gamesOnline);
                 console.log("the gamelist length is:", gameList.length);
-
             }
-
         }
 
 
@@ -112,13 +102,7 @@ wss.on("connection", function (ws) {
         if (inMSG.player == "Player two") {
             currentGame.getPlayerOne().send(JSON.stringify(inMSG));
         }
-
-
-
-
     });
-
-
 });
 
 // prints the amount of connected clients.
