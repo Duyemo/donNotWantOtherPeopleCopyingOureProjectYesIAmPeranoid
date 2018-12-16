@@ -8,6 +8,7 @@ var field = [];
 
 // var sound = document.getElementById("sound");
 
+
 function gameState() {
     var counter = 0;
 
@@ -46,7 +47,8 @@ function gameState() {
     } else {
         console.log("please move all your boats to the field");
         document.getElementById("errorMessage").innerHTML = "Please move all your boats to the field.";
-
+        
+        
     }
 };
 
@@ -61,7 +63,7 @@ function gameState() {
         if (inMSg.type == "PLAYER_ONE") {
             console.log("You are player one");
             whichPlayer = "Player one";
-            yourTurn = true;
+            
 
         }
 
@@ -75,6 +77,9 @@ function gameState() {
             console.log("You are both ready");
             document.getElementById("OpponentsTextId").innerHTML = "Oppents ships";
             document.getElementById("errorMessage").innerHTML = "";
+            if(whichPlayer == "Player one"){
+                yourTurn = true;
+            }
 
 
             const start = Date.now();
@@ -131,9 +136,11 @@ function gameState() {
 
     // when we are open we start the whole game
     socket.onopen = function () {
+        if(window.location.pathname == "/play"){
         socket.send(Messages.S_CONNECTED);
 
         start();
+        }
     };
 })();
 
@@ -143,7 +150,8 @@ function start() {
 
     // make button which point to the function
     document.getElementById("gameChanger").addEventListener("click", gameState);
-    new Audio("\public\javascripts\test.wav").play();
+   
+    // new Audio("\public\javascripts\test.wav").play();
 }
 
 // the sound object
