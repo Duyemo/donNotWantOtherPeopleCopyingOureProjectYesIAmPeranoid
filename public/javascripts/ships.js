@@ -8,6 +8,7 @@ var widthOfShip =0;
 var oneForOne = false;
 var shipRemove = null; 
 
+
 //function that allows you select a ship and turn it sideways
 var registerClickOnShip = function () {
   
