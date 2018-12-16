@@ -45,8 +45,7 @@ wss.on("connection", function (ws) {
     ws.on("message", function incoming(message) {
         console.log('received: %s', message);
         let inMSG = JSON.parse(message);
-        console.log(inMSG);
-
+       
         //only if we are connected with /play we make a new game
         if (inMSG.type == "CONNECTED") {
             // push the new client to the clients array

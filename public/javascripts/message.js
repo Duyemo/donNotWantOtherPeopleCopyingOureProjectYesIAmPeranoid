@@ -77,6 +77,11 @@ player: null,
 position: null
 };
 
+/* server to client: game is aborted. */
+exports.T_GAME_ABORTED = "GAME_ABORTED";
+exports.O_GAME_ABORTED = {type: exports.O_GAME_ABORTED,
+player: null
+};
 
 //if the exports is undefined, we are on the client, else the server 
 } (typeof exports === "undefined" ? this.Messages = {} : exports));

@@ -236,7 +236,14 @@ li a {
    width: 10%;
    position: absolute;
    bottom: 20%;
-   left: 690px;
+   left: 39%;
+ }
+ 
+ #dropOut{
+   width: 10%;
+   position: absolute;
+   bottom: 20%;
+   right: 39%
  }
 
 /* the ships */
