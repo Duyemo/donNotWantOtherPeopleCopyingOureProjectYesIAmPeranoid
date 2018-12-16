@@ -34,6 +34,7 @@ h1{
   width: 30%;
   margin: auto;
   font-size: 16px;
+  border: 0px; 
 }
 
 
@@ -383,4 +384,8 @@ li a {
   margin: 5px;
   padding: 5px;
   border: none;
+}
+#trash{
+  position: absolute;
+  left: -1000px;
 }
