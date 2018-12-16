@@ -131,9 +131,11 @@ function gameState() {
 
     // when we are open we start the whole game
     socket.onopen = function () {
+        if(window.location.pathname == "/play"){
         socket.send(Messages.S_CONNECTED);
 
         start();
+        }
     };
 })();
 
@@ -143,7 +145,8 @@ function start() {
 
     // make button which point to the function
     document.getElementById("gameChanger").addEventListener("click", gameState);
-    new Audio("\public\javascripts\test.wav").play();
+   
+    // new Audio("\public\javascripts\test.wav").play();
 }
 
 // the sound object
