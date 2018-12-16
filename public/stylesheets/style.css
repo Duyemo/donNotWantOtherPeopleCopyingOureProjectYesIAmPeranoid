@@ -23,16 +23,13 @@ h1{
 #form{
   margin: auto;
   width: 60%;
-  border: 3px solid #000000;
   padding: 10px;
   text-align: center;
-  border-style: dotted;
-  border-color: tomato;
   
 }
 
 .howToPlay{
-  color: crimson;
+  color: #87d0fe;
   text-align: center;
   width: 30%;
   margin: auto;
@@ -335,7 +332,9 @@ li a {
 
 .splashShip{
   width: 0px; 
+
   position: relative;
+  
  
   /*-webkit-animation-name: shipSplash; 
   -webkit-animation-duration: 10s; 
@@ -352,26 +351,11 @@ li a {
 }*/
 
 @keyframes shipSplash {
-  0%   {left:1500px; top:90px;}
-  100%  {left:-700px; top:90px;}
+  0%   {left:1500px; top:20px;}
+  100%  {left:-700px; top:20px;}
 }
 
-#header{
-  background: white;
-  transition: background  2s;
-  
-}
-#header:hover{
- background: #000000;
-}
-#titel{
-  background: white;
-  transition: background  2s;
-  
-}
-#titel:hover{
- background: yellowgreen;
-}
+
 
 
 

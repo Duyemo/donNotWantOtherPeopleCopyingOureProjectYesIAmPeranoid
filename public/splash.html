@@ -1,67 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <link href="stylesheets/style.css" rel="stylesheet" type="text/css">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   
-    
 
-    <title >Splash</title>
+
+
+    <title>Splash</title>
 </head>
+
 <body>
     <header>
         <img id=header src="images/titelComicSans.png" alt="Battleship">
-        
+
     </header>
 
-    <div id = "stats">
-            <ul>
-                <li id="gamesOnline" class="numberOfOngoingGames"></li>
-                <li id="playersOnline" class="onlinePlayers"> x </li>
-                <li id="gamesPlayed" class="gamesPlayed"> x </li>
-            </ul>
-        </div>
-        
-<div id="form" >
-    <form action="/play" method="get" >
-        <p> Type in your in game name</p>
-        <input id="Nickname" type="text" name="name"><br>
-         <button type="submit"> Start the game </button> 
-    </form>
+    <div id="stats">
+        <ul>
+            <li id="gamesOnline" class="numberOfOngoingGames"></li>
+            <li id="playersOnline" class="onlinePlayers"> x </li>
+            <li id="gamesPlayed" class="gamesPlayed"> x </li>
+        </ul>
+    </div>
+    <div class="howToPlay">
+        <h2>How to play:</h2>
+        <p>The game is simple, destroy your oppponets ships by guessing the location. If you destroy all the ships
+            before he does you win the game!
+            But first you need to place your ships. Drag them to the field and place them on your prefered location. If
+            you want to turn them simply press the spacebar. But most important, enjoy!
+        </p>
 
-</div>
+    </div>
 
-<div class = "howToPlay">
-<h2>How to play:</h2>
-<p>The game is simple, destroy your oppponets ships by guessing the location. If you destroy all the ships before he does you win the game! 
-    But first you need to place your ships. Drag them to the field and place them on your prefered location. If you want to turn them simply press the spacebar. But most important, enjoy!
-</p>
+    <div id="form">
+        <form action="/play" method="get">
 
-</div>
+            <button type="submit"> Start the game </button>
+        </form>
 
-<!--comment-->
-<div class="splashShip"> <img  id="boat" src="images/boat.png" alt="Battleship"> </div>
+    </div>
+
+
+
+    <!--comment-->
+    <div class="splashShip"> <img id="boat" src="images/boat.png" alt="Battleship"> </div>
     <footer>
-    <ul>
-        <p id="madeBy">Made by Duyemo and Marit</p>
-        <li><a href="https://twitter.com/Battles43567922">Twitter</a></li>
-        <li><a href="https://www.facebook.com/battle.ship.7731247">Facebook</a></li>
-        <li><a href="https://www.instagram.com/battleshipdamr/">Instagram</a></li>
+        <ul>
+            <p id="madeBy">Made by Duyemo and Marit</p>
+            <li><a href="https://twitter.com/Battles43567922">Twitter</a></li>
+            <li><a href="https://www.facebook.com/battle.ship.7731247">Facebook</a></li>
+            <li><a href="https://www.instagram.com/battleshipdamr/">Instagram</a></li>
 
-    </ul>
+        </ul>
 
-</footer>
-<script src="javascripts/data.js"></script>
-<script src="javascripts/message.js"></script>
-<script scr="javascripts/stats.js"></script>
+    </footer>
+    <script src="javascripts/data.js"></script>
+    <script src="javascripts/message.js"></script>
+    <script scr="javascripts/stats.js"></script>
 
-<script src="javascripts/script.js"></script> 
-<script src="javascripts/interactions.js"></script> 
-<script src="javascripts/stats.js"></script>
-<script src="javascripts/client.js"></script>
+    <script src="javascripts/script.js"></script>
+    <script src="javascripts/interactions.js"></script>
+    <script src="javascripts/stats.js"></script>
+    <script src="javascripts/client.js"></script>
 
 
 </body>
+
 </html>
