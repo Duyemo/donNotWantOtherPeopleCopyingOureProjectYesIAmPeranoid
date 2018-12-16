@@ -139,7 +139,16 @@ function gameState() {
             document.getElementById("errorMessage").innerHTML = "oh no, you lost ;(";
             // end the game
         }
+        if(inMSg.type == "GAME_ABORTED"){
+            console.log("other person left the game");
+            document.getElementById("errorMessage").innerHTML = "other person left the game, you will lose connection";
+            socket.close();
+        }
+        
+    };
 
+    socket.onclose = function(){
+        console.log("you left the game");
     };
 
     // when we are open we start the whole game
@@ -158,24 +167,19 @@ function start() {
 
     // make button which point to the function
     document.getElementById("gameChanger").addEventListener("click", gameState);
-   
+    document.getElementById("dropOut").addEventListener("click", dropOut);
     // new Audio("\public\javascripts\test.wav").play();
 }
 
-// the sound object
-function sound(src) {
-    this.sound = document.createElement("audio");
-    this.sound.src = src;
-    this.sound.setAttribute("preload", "auto");
-    this.sound.setAttribute("controls", "none");
-    this.sound.style.display = "none";
-    document.body.appendChild(this.sound);
-    this.play = function () {
-        this.sound.play();
-    }
-    this.stop = function () {
-        this.sound.pause();
-    }
+function dropOut(){
+    console.log("I dropped out");
+
+    
+    let msg = Messages.O_GAME_ABORTED;
+    msg.player = whichPlayer;
+
+    socket.send(JSON.stringify(msg));
+    socket.close();
 }
 
 

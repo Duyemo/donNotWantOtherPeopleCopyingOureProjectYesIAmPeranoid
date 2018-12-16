@@ -77,9 +77,9 @@ player: null,
 position: null
 };
 
-/* server to client: game is aborted. */
+/* client to server to client: game is aborted. */
 exports.T_GAME_ABORTED = "GAME_ABORTED";
-exports.O_GAME_ABORTED = {type: exports.O_GAME_ABORTED,
+exports.O_GAME_ABORTED = {type: exports.T_GAME_ABORTED,
 player: null
 };
 

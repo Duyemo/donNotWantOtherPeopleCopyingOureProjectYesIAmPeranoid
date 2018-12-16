@@ -102,6 +102,23 @@ wss.on("connection", function (ws) {
             currentGame.getPlayerOne().send(JSON.stringify(inMSG));
         }
     });
+
+    ws.on("close", function (code) {
+        console.log("it closed");
+
+        if(code == 1001){
+            try{
+                currentGame.getPlayerOne().close();
+            } catch (e){
+                console.log(e);
+            }
+            try{
+                currentGame.getPlayerTwo().close();
+            } catch(e){
+                console.log(e);
+            }
+        }
+    });
 });
 
 // prints the amount of connected clients.
@@ -118,9 +135,7 @@ wss.on("connection", function (ws) {
 
 });
 
-wss.on("close", function (code) {
-    console.log("it closed");
-});
+
 
 
 
