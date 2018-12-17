@@ -28,7 +28,7 @@ app.use(express.static(__dirname + "/public"));
 app.use("/", indexRouter);
 app.get("/play", indexRouter);
 
-//TODO: move to routes/index ::: new piece of code for templating stats
+//new piece of code for templating stats. althoug it doesn't work after coopiïng it step by step
 app.get("/", (req, res) => {
     res.render("splash.ejs", { gamesInitialized: gameStatus.gamesInitialized, gamesCompleted: gameStatus.gamesCompleted });
 });

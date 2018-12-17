@@ -72,7 +72,7 @@ var registerClickOnShip = function () {
     document.addEventListener("keypress", function (event) {
       
       // check if the key that is pressed is indead the spacebar
-    if(event.keyCode == 32){ 
+    if(event.keyCode == 32||event.keyCode == 0){ 
     if(moving){
      
       //removes the ship that you currently have selected
@@ -453,58 +453,3 @@ $(document).ready(registerClickOnShip);
           
 };
 $(document).ready(placeShipInTable);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-  var turnShip = function () {
- "use strict";
-
- $(".comment-input button").on("click", function (event) {
-  
-  
-    if(moving){
-      (shipPlace).remove();
-      shipPlace = null; 
-      
-      if(heightOfShip == 70){
-      var doubleShipTurned = new Image(70, 35);
-      doubleShipTurned.src = "doubleShipTurned.gif";
-      doubleShipTurned.id= "doubleShipTurned";
-      doubleShipTurned.alt= "doubleShipTurned";
-      document.body.appendChild(doubleShipTurned);
-     
-      var doubleShipTurned = document.getElementById("doubleShipTurned");
-      doubleShipTurned.addEventListener("mousedown", initialClick, false);
-
-      image = doubleShipTurned;
-      shipPlace = doubleShipTurned; 
-      heightOfShip = doubleShipTurned.height; 
-      widthOfShip = doubleShipTurned.width;
-      document.addEventListener("mousemove", move, false);
-     
-      $(doubleShipTurned).each(function() {
-        $(this).insertAfter($(this).parent().find("#playerTable thead"));
-    });
-  }
-
-
-    }
- });
-};
-$(document).ready(turnShip);
- */
-   
