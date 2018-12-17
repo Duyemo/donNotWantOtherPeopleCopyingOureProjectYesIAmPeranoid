@@ -394,3 +394,9 @@ li a {
   position: absolute;
   left: -1000px;
 }
+#playersConnected::after{
+  content: " player(s) er connected";
+}
+#gamesStared::after{
+  content: " game(s) are started";
+}

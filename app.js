@@ -14,7 +14,7 @@ var gameList = [];
 
 var gameStat = require("./public/javascripts/stats");
 var Message = require("./public/javascripts/message");
-
+gameStatus.gamesCompleted=1;
 // make client array
 queue = [];
 CLIENTS = [];
@@ -48,7 +48,7 @@ var connectionId = 0;
 
 // if connected, sends connected to server. And print to console log messages from server
 wss.on("connection", function (ws) {
-
+    gameStatus.gamesCompleted++;
     ws.send(Message.S_CONNECTED);
 
     // for all the incomming messages
