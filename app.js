@@ -20,7 +20,8 @@ queue = [];
 CLIENTS = [];
 IDs = [];
 
-
+//set the view engine
+app.set('view engine', 'ejs');
 
 // for the routes
 app.use(express.static(__dirname + "/public"));
@@ -28,12 +29,10 @@ app.use("/", indexRouter);
 app.get("/play", indexRouter);
 
 //TODO: move to routes/index ::: new piece of code for templating stats
-app.set('view engine', 'ejs');
-app.use(express.static(__dirname + "/public"));
 app.get("/", (req, res) => {
     res.render("splash.ejs", { gamesInitialized: gameStatus.gamesInitialized, gamesCompleted: gameStatus.gamesCompleted });
 });
-gameStatus.gamesCompleted++;
+
 
 //creates server
 var server = http.createServer(app);

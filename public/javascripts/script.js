@@ -60,6 +60,10 @@ function fire(elem) {
 
                 //message to the client
                 document.getElementById("errorMessage").innerHTML = "You let the ship sink";
+                //timeout that clear the message that the ship has sunk after about 5sec
+                setTimeout(function () {
+                    document.getElementById("errorMessage").innerHTML = " ";
+                }, 5000);
 
                 numberOfSHipsSunk++;
                 console.log(numberOfSHipsSunk);
