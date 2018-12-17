@@ -104,7 +104,7 @@ function gameState() {
 
         if (inMSg.type == "BOTH_READY") {
             console.log("You are both ready");
-            document.getElementById("OpponentsTextId").innerHTML = "Oppents ships";
+            document.getElementById("OpponentsTextId").innerHTML = "Opponents ships";
             document.getElementById("errorMessage").innerHTML = "";
             console.log("we are both ready now");
             if(whichPlayer == "Player one"){
@@ -117,7 +117,7 @@ function gameState() {
             setInterval(function () {
                 var timeInGame = Date.now() - start; //give time passed in ms
                 var timeInGameSeconds = (Math.floor(timeInGame / 1000)); // convertes time form ms to s 
-                inGameTimer.innerHTML = "Time spend in this game is: \n \n" + timeInGameSeconds + " seconds";
+                inGameTimer.innerHTML = "Time spent in this game is: \n \n" + timeInGameSeconds + " seconds";
             }, 1000);
 
         }

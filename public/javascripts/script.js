@@ -1,4 +1,5 @@
 var numberOfSHipsSunk = 0;
+var won = false;
 
 function fire(elem) {
 
@@ -61,9 +62,11 @@ function fire(elem) {
                 //message to the client
                 document.getElementById("errorMessage").innerHTML = "You let the ship sink";
                 //timeout that clear the message that the ship has sunk after about 5sec
+                if(won == false){
                 setTimeout(function () {
                     document.getElementById("errorMessage").innerHTML = " ";
                 }, 5000);
+            }
 
                 numberOfSHipsSunk++;
                 console.log(numberOfSHipsSunk);
@@ -74,6 +77,7 @@ function fire(elem) {
             if (numberOfSHipsSunk == 8) {
                 console.log("you won");
                 document.getElementById("errorMessage").innerHTML = "You won!";
+                won = true;
                 let msg = Messages.O_WINNER;
                 msg.player = whichPlayer;
                 msg.opponent = yourOpponent;
