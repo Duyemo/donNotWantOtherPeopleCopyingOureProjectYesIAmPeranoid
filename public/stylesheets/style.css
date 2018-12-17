@@ -154,7 +154,7 @@ li a {
   margin: 5px;
  }
  main .PlayersText::after{
-   content: "ships";
+   content: "Your ships";
  }
  main .OpponentsText{
   position: absolute;
@@ -166,7 +166,7 @@ li a {
   margin: 5px;
  }
  main .OpponentsText::before{
-   content: "Waiting ";  
+   content: "|";  
    
  }
 
@@ -314,15 +314,15 @@ li a {
   width: 35px;
   height: 140px;
   position: absolute;
-  top: 375px;
-  left: 580px;
+  top: 150px;
+  left: 660px;
  }
  #pentaShip1{
   width: 35px;
   height: 175px;
   position: absolute;
-  top: 375px;
-  left: 620px;
+  top: 150px;
+  left: 700px;
  }
  #shipTurned{
   /*Positions are heigh negative numbers so the ship doesn't appear on the screen 
